@@ -1,0 +1,137 @@
+{
+  "Entrada TRC001 - FT01": {
+    "mínimo": 1,
+    "máximo": 45,
+    "unidade": "m³/h",
+    "SPAlarmL": 37,
+    "SPAlarmLL": 27,
+    "SPAlarmH": 41,
+    "SPAlarmHH": 44.5
+  },
+  "Demineralized Water Soda Dilution Flow - FT02": {
+    "mínimo": 5000,
+    "máximo": 6100,
+    "unidade": "l/h",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 14700,
+    "SPAlarmHH": 0
+  },
+  "Demineralized Water Hydrochloric Acid Dilution Flow - FT03": {
+    "mínimo": 1000,
+    "máximo": 1700,
+    "unidade": "l/h",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 15000,
+    "SPAlarmHH": 0
+  },
+  "Succion Pressure Pumps - PT01": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 3.8,
+    "SPAlarmHH": 0
+  },
+  "Pressure Input TRC001 - PT02": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 6,
+    "SPAlarmHH": 0
+  },
+  "Pressure Out TRC001 - PT03": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 2.8,
+    "SPAlarmHH": 0
+  },
+  "Pressure Input TRC002 - PT04": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 8.8,
+    "SPAlarmHH": 0
+  },
+  "Pressure Out TRC002 - PT05": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 7.8,
+    "SPAlarmHH": 0
+  },
+  "Pressure Input TRC003 - PT06": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 3.8,
+    "SPAlarmHH": 0
+  },
+  "Pressure Out TRC003 - PT07": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 9.8,
+    "SPAlarmHH": 0
+  },
+  "Condutivity Water Recirculation Water Desmineralized - CT01": {
+    "mínimo": 0,
+    "máximo": 0,
+    "unidade": "ms",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 0,
+    "SPAlarmHH": 0
+  },
+  "Condutivity Water Recirculation Water Desmineralized - CT02": {
+    "mínimo": 0,
+    "máximo": 0,
+    "unidade": "ms",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 0,
+    "SPAlarmHH": 0
+  },
+  "TanK Demineralized Water Level - LT01": {
+    "mínimo": 0,
+    "máximo": 100,
+    "unidade": "%",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 92,
+    "SPAlarmHH": 0
+  },
+  "TanK Client Demineralized Water Level - LT02": {
+    "mínimo": 0,
+    "máximo": 100,
+    "unidade": "%",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 0,
+    "SPAlarmH": 94,
+    "SPAlarmHH": 0
+  },
+  "Tank Pump Suction": {
+    "mínimo": 0,
+    "máximo": 10,
+    "unidade": "bar",
+    "SPAlarmL": 0,
+    "SPAlarmLL": 1,
+    "SPAlarmH": 5.5,
+    "SPAlarmHH": 5
+  }
+}

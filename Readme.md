@@ -1,0 +1,348 @@
+# 🧠 OPC UA Multi-Client Data Collector
+
+**Backend: Node.js + TypeScript + MongoDB**  
+**Frontend: React + TypeScript + Styled Components**
+
+---
+## 📘 Visão Geral
+
+Este projeto implementa um **coletor de dados OPC UA multi-cliente** com arquitetura **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
+O sistema permite a **criação dinâmica de múltiplas instâncias independentes de clientes OPC UA**, cada uma comunicando-se com diferentes servidores OPC UA na rede, armazenando leituras e telemetrias em coleções isoladas no MongoDB.
+
+O **frontend React/TypeScript** atua como painel de monitoramento e análise, exibindo em tempo real as variáveis coletadas, o status das conexões, alertas de limite e dashboards históricos.
+
+
+---
+
+## ⚙️ System Architecture
+
+┌─────────────────┐        ingest (OPC UA)        ┌──────────────────┐
+│  OPC UA Servers │ ───────────────────────────▶  │  OPC UA Clients  │
+└─────────────────┘                               │  (Multi-Client)   │
+                                                  │  inside BACKEND  │
+                                                  └─────────┬────────┘
+                                                            │ write/read
+                                                            ▼
+                                                    ┌───────────────┐
+                                                    │   MongoDB     │
+                                                    └───────────────┘
+                                                            ▲
+                                             REST / WS      │
+┌─────────────────┐   HTTPS (REST/WS)   ┌─────────┴────────┐
+│    Frontend     │ ◀────────────────── │     Backend      │
+│  (React/TS)     │ ───────────────────▶│  (Node/TS API)   │
+└─────────────────┘                     └──────────────────┘
+
+- Frontend ⇄ Backend: HTTP/HTTPS (REST) e, quando necessário, WebSockets.
+- Backend ⇄ OPC UA: sessões/assinaturas mantidas pelos clientes OPC UA (node-opcua).
+- Backend ⇄ MongoDB: escrita de telemetria e leitura para as rotas da API.
+
+### 🔩 Backend (Node.js + TypeScript)
+
+- Gerencia múltiplas instâncias de `OpcuaClient` através do **ClientManager**.
+- Cada instância conecta-se a um endpoint OPC UA distinto.
+- Coleta periódica (polling) de variáveis e escrita em MongoDB.
+- Coleções dinâmicas por cliente:
+  Client01_Transmiters
+  Client02_Transmiters
+  Client03_Transmiters
+
+- Pipeline de agregação temporal e filtragem por mês/ano, hora inicial/final.
+- Sistema de alertas (e-mail / WhatsApp) baseado em limites configurados nos arquivos `ClientXX_setuptsconfig.json`.
+
+### 🖥️ Frontend (React + TypeScript)
+- Interface de dashboards industriais com múltiplos componentes:
+- **WalletBox** – KPIs agregados.  
+- **HistoryBox** – histórico temporal.  
+- **PieChartBalance** – relação de falhas por variável.  
+- **MongoDBBox / OPCUABox / HostMetricsBox** – status de infraestrutura.  
+- Estilização modular via **styled-components**.  
+- Animações com **Framer Motion**.  
+- Comunicação via **Axios / Fetch** com o backend.  
+- Documentação completa via **JSDoc** padronizado.
+
+---
+
+## 🧩 Estrutura de Diretórios
+
+├── backend/
+│ ├── src/
+│ │ ├── clients/ # Instâncias OPC UA (Client01, Client02, etc.)
+│ │ ├── core/ # ClientManager, Device_WriteDB, alert schedulers
+│ │ ├── routes/ # Rotas REST (status, telemetria, histórico)
+│ │ ├── utils/ # Helpers e pipelines de agregação MongoDB
+│ │ └── config/ # Setup e limites por cliente
+│ ├── package.json
+│ ├── tsconfig.json
+│ └── .env.example
+│
+└── frontend/
+├── src/
+│ ├── components/ # UI Boxes (HistoryBox, WalletBox, OPCUABox, etc.)
+│ ├── hooks/ # Contextos (auth, theme, msgbox)
+│ ├── pages/ # Páginas do app (Dashboard, Login, Profile)
+│ ├── services/ # API handlers e integração backend
+│ └── styles/ # Themes e global styles
+├── package.json
+├── tsconfig.json
+└── public/
+└── favicon.ico
+
+---
+
+## 🧠 Tecnologias Principais
+
+### Backend
+| Tecnologia | Uso |
+|-------------|------|
+| **Node.js / TypeScript** | Core da aplicação OPC UA |
+| **node-opcua** | Implementação do cliente OPC UA |
+| **Express.js** | API REST entre backend ↔ frontend |
+| **MongoDB / Mongoose** | Armazenamento dos dados de telemetria |
+| **Nodemailer / WhatsApp API** | Alertas automáticos |
+| **Winston / Morgan** | Logging e auditoria |
+| **dotenv** | Configuração por ambiente |
+
+### Frontend
+| Tecnologia | Uso |
+|-------------|------|
+| **React + TypeScript** | Framework principal da UI |
+| **styled-components** | CSS-in-JS e temas dinâmicos |
+| **Framer Motion** | Animações de interface |
+| **Recharts** | Visualização de dados (gráficos) |
+| **Axios** | Comunicação HTTP com o backend |
+| **React Router DOM** | Navegação SPA |
+| **Context API** | Autenticação, tema e mensagens globais |
+
+---
+
+## 🚀 Instalação e Execução
+
+### Pré-requisitos
+- Node.js 18+
+- MongoDB em execução local ou remoto
+- NPM ou Yarn
+
+### 1️⃣ Clonar o repositório
+```bash
+git clone https://github.com/seuusuario/opcua-multiclient-collector.git
+cd opcua-multiclient-collector
+
+2️⃣ Backend
+cd backend
+npm install
+cp .env.example .env
+# configure variáveis: MONGODB_URI, OPCUA_ENDPOINTS, EMAIL_SERVICE, etc.
+npm run dev
+
+3️⃣ Frontend
+cd ../frontend
+npm install
+npm run dev
+
+
+---
+
+---
+
+## 🌎 English Version
+
+# 🧠 OPC UA Multi-Client Data Collector
+
+**Backend: Node.js + TypeScript + MongoDB**  
+**Frontend: React + TypeScript + Styled Components**
+
+---
+
+## 📘 Overview
+
+This project implements a **multi-client OPC UA data collector** built with **Node.js + TypeScript + MongoDB + React**, designed for industrial environments.  
+It enables the **dynamic creation of multiple independent OPC UA client instances**, each communicating with different OPC UA servers on the network, storing telemetry in isolated MongoDB collections.
+
+The **React/TypeScript frontend** acts as a real-time monitoring dashboard, displaying collected variables, connection status, alert thresholds, and historical charts.
+
+---
+
+## ⚙️ System Architecture
+
+
+┌─────────────────┐        ingest (OPC UA)        ┌──────────────────┐
+│  OPC UA Servers │ ───────────────────────────▶  │  OPC UA Clients  │
+└─────────────────┘                               │  (Multi-Client)   │
+                                                  │  inside BACKEND  │
+                                                  └─────────┬────────┘
+                                                            │ write/read
+                                                            ▼
+                                                    ┌───────────────┐
+                                                    │   MongoDB     │
+                                                    └───────────────┘
+                                                            ▲
+                                             REST / WS      │
+┌─────────────────┐   HTTPS (REST/WS)   ┌─────────┴────────┐
+│    Frontend     │ ◀────────────────── │     Backend      │
+│  (React/TS)     │ ───────────────────▶│  (Node/TS API)   │
+└─────────────────┘                     └──────────────────┘
+
+- Frontend ⇄ Backend: HTTP/HTTPS (REST) e, quando necessário, WebSockets.
+- Backend ⇄ OPC UA: sessões/assinaturas mantidas pelos clientes OPC UA (node-opcua).
+- Backend ⇄ MongoDB: escrita de telemetria e leitura para as rotas da API.
+
+markdown
+Copiar código
+
+### 🔩 Backend (Node.js + TypeScript)
+- Manages multiple `OpcuaClient` instances through **ClientManager**.  
+- Each instance connects to a distinct OPC UA endpoint.  
+- Periodic polling and data persistence in MongoDB.  
+- Dynamic collections per client:  
+  `Client01_Transmiters`, `Client02_Transmiters`, `Client03_Transmiters`, etc.  
+- Time-based aggregation pipelines and month/year filters.  
+- Alert system (email / WhatsApp) using limits defined in each `ClientXX_setuptsconfig.json`.
+
+### 🖥️ Frontend (React + TypeScript)
+- Modular industrial dashboards:  
+  - **WalletBox** – aggregated KPIs  
+  - **HistoryBox** – historical trends  
+  - **PieChartBalance** – fault ratio per variable  
+  - **MongoDBBox / OPCUABox / HostMetricsBox** – infrastructure status  
+- Styled with **styled-components** and animated with **Framer Motion**  
+- REST communication via **Axios / Fetch**  
+- Consistent **JSDoc** documentation style across modules.
+
+---
+
+## 🧩 Directory Structure
+
+backend/
+├── src/
+│ ├── clients/ # OPC UA client instances (Client01, Client02, ...)
+│ ├── core/ # ClientManager, Device_WriteDB, alert schedulers
+│ ├── routes/ # REST routes (status, telemetry, history)
+│ ├── utils/ # MongoDB aggregation helpers
+│ └── config/ # Setup and limits per client
+├── package.json
+├── tsconfig.json
+└── .env.example
+
+frontend/
+├── src/
+│ ├── components/ # UI Boxes (HistoryBox, WalletBox, OPCUABox, etc.)
+│ ├── hooks/ # Contexts (auth, theme, msgbox)
+│ ├── pages/ # Main pages (Dashboard, Login, Profile)
+│ ├── services/ # API handlers
+│ └── styles/ # Themes and global styles
+├── package.json
+├── tsconfig.json
+└── public/
+└── favicon.ico
+
+yaml
+Copiar código
+
+---
+
+## 🧠 Main Technologies
+
+### Backend
+| Technology | Purpose |
+|-------------|----------|
+| **Node.js / TypeScript** | Core OPC UA logic |
+| **node-opcua** | OPC UA client implementation |
+| **Express.js** | REST API between backend ↔ frontend |
+| **MongoDB / Mongoose** | Telemetry storage |
+| **Nodemailer / WhatsApp API** | Automated alerts |
+| **Winston / Morgan** | Logging and auditing |
+| **dotenv** | Environment configuration |
+
+### Frontend
+| Technology | Purpose |
+|-------------|----------|
+| **React + TypeScript** | Main UI framework |
+| **styled-components** | CSS-in-JS & dynamic themes |
+| **Framer Motion** | Interface animations |
+| **Recharts** | Data visualization |
+| **Axios** | HTTP communication |
+| **React Router DOM** | SPA navigation |
+| **Context API** | Authentication, theme, messages |
+
+---
+
+## 🚀 Setup & Execution
+
+### Requirements
+- Node.js 18+
+- MongoDB (local or remote)
+- NPM or Yarn
+
+### Steps
+
+```bash
+# 1️⃣ Clone the repository
+git clone https://github.com/youruser/opcua-multiclient-collector.git
+cd opcua-multiclient-collector
+
+# 2️⃣ Backend setup
+cd backend
+npm install
+cp .env.example .env
+# configure: MONGODB_URI, OPCUA_ENDPOINTS, EMAIL_SERVICE, etc.
+npm run dev
+
+# 3️⃣ Frontend setup
+cd ../frontend
+npm install
+npm run dev
+📧 For professional contact or private repository access requests:
+viniciusmarconatto@hotmail.com
+LinkedIn: Vinicius Marconatto
+
+
+
+---
+
+---
+
+## 🖼️ Interface Preview
+
+Abaixo estão capturas de tela da aplicação **Multi-Client Collector**, ilustrando o frontend React e os principais painéis industriais do sistema.
+
+---
+
+<p align="center">
+  <img src="./screenshots/Alerts.png" width="90%" alt="Tela de alertas do sistema">
+</p>
+<p align="center"><i>Figura 1 — <b>Alerts Sent</b> — Lista cronológica de alertas gerados automaticamente pelo backend, com exibição do nome do instrumento, tipo de desvio (HH, LL etc.), valor atual e timestamp. Cada alerta também mostra o e-mail de destino configurado. Esta tela consolida, em tempo real, os eventos de falha detectados via OPC UA e armazenados no MongoDB.</i></p>
+
+---
+
+<p align="center">
+  <img src="./screenshots/Browser.png" width="55%" alt="Navegador OPC UA">
+</p>
+<p align="center"><i>Figura 2 — <b>Browser OPC UA</b> — Ferramenta de navegação para listar variáveis do servidor OPC UA em tempo real. Permite explorar nós, abrir detalhes e adicioná-los ao mapeamento do cliente usando o botão <b>Add</b>. Cada linha representa um nó com nome simbólico (FT01, PT02 etc.), facilitando o mapeamento de variáveis industriais sem precisar digitar NodeIds manualmente.</i></p>
+
+---
+
+<p align="center">
+  <img src="./screenshots/ClientCreateAndBrowserServer.png" width="90%" alt="Formulário de configuração OPC UA Client">
+</p>
+<p align="center"><i>Figura 3 — <b>OPCUA Client Configuration</b> — Formulário de configuração do cliente OPC UA. Permite registrar endpoints, definir políticas de segurança (<b>Security Policy</b> e <b>Mode</b>), ajustar intervalos de leitura (<b>Initial Delay</b> / <b>Max Delay</b>) e gerenciar variáveis monitoradas. A seção <b>Map Memory</b> exibe todos os NodeIds adicionados manualmente ou via <b>Browse by name</b>. Cada cliente (Client 1, Client 2 etc.) representa uma sessão OPC UA independente gerenciada pelo backend.</i></p>
+
+---
+
+<p align="center">
+  <img src="./screenshots/Dashboard.png" width="90%" alt="Dashboard principal com gráficos e totais de processo">
+</p>
+<p align="center"><i>Figura 4 — <b>Dashboard</b> — Tela analítica que consolida variáveis de processo e estatísticas históricas. Os cards superiores mostram totalizadores mensais de produção e regeneração. O painel <b>Failure Distribution</b> exibe a participação percentual de falhas por instrumento, enquanto <b>Colors Setup</b> permite configurar as cores das linhas no gráfico. O componente inferior <b>HistoryBox</b> mostra séries históricas do MongoDB com controle de visibilidade, unidade de engenharia e range de medição por variável.</i></p>
+
+---
+
+<p align="center">
+  <img src="./screenshots/ServiceMetrics.png" width="90%" alt="Painel de métricas de serviços">
+</p>
+<p align="center"><i>Figura 5 — <b>Service Metrics</b> — Painel técnico de diagnóstico em tempo real. Exibe métricas do <b>MongoDB</b> (conexões, latência), <b>OPC UA</b> (sessões, notificações, publish p95), <b>HTTP/Morgan</b> (requisições e tempos médios) e <b>Host</b> (uso de CPU, memória e disco). Este painel fornece uma visão consolidada da saúde operacional do backend e de seus serviços de coleta e persistência.</i></p>
+
+---
+
+
+
+
