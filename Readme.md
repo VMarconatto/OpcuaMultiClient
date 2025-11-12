@@ -326,6 +326,37 @@ Abaixo estão capturas de tela da aplicação **Multi-Client Collector**, ilustr
 
 ---
 
+flowchart LR
+  %% Tema rápido
+  classDef box fill:#111,border:#39f37a,stroke-width:1.5,color:#e8e8e8,rx:10,ry:10;
+  classDef db  fill:#111,border:#39f37a,stroke-width:1.5,color:#e8e8e8,rx:8,ry:8;
+  classDef ext fill:#0f1012,border:#39f37a,stroke-width:1.5,color:#cfcfcf,rx:8,ry:8;
+
+  %% Nós externos
+  OPCUA[OPC UA Servers]:::ext
+  FRONT[Frontend (React/TS)]:::ext
+  MONGO[(MongoDB)]:::db
+  ALERTS[[Alerting (e-mail / WhatsApp)]]:::ext
+
+  %% Backend central com Multi-Client + PKI
+  subgraph BACKEND["Backend (Node/TS API)\n— Multi-Client OPC UA\n— PKI & Certificate Manager"]
+    direction TB
+    MC[Coleta/Assinaturas OPC UA]:::box
+    API[HTTP(S) REST / WebSockets]:::box
+  end
+  class BACKEND box
+
+  %% Fluxos
+  OPCUA -->|ingest (OPC UA)| MC
+  MC -->|write/read| MONGO
+  FRONT <-->|HTTP(S) / WS| API
+  API -->|read| MONGO
+  MC -->|eventos de desvio| ALERTS
+
+  %% Legendas curtas
+  %% (opcional) link para docs
+
+
 
 
 
