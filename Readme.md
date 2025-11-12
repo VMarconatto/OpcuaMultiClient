@@ -127,7 +127,7 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 cd backend
 npm install
 cp .env.example .env
-# configure variáveis: MONGODB_URI, OPCUA_ENDPOINTS, EMAIL_SERVICE, etc.
+# configure variáveis: mongodb_uri, Opcua_EndPoints, Email_Service, etc
 npm run dev
 
 2️⃣ Frontend
