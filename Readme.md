@@ -14,7 +14,7 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 
 ---
 
-## ⚙️ System Architecture
+## ⚙️ Arquiterua do Sistema
 
 ┌─────────────────┐        ingest (OPC UA)        ┌──────────────────┐
 │  OPC UA Servers │ ───────────────────────────▶  │  OPC UA Clients  │
