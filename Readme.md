@@ -14,7 +14,7 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 
 ---
 
-## ⚙️ System Architecture
+## ⚙️ Arquiterua do Sistema
 
 ┌─────────────────┐        ingest (OPC UA)        ┌──────────────────┐
 │  OPC UA Servers │ ───────────────────────────▶  │  OPC UA Clients  │
@@ -122,28 +122,18 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 - Node.js 18+
 - MongoDB em execução local ou remoto
 - NPM ou Yarn
-
-### 1️⃣ Clonar o repositório
-```bash
-git clone https://github.com/seuusuario/opcua-multiclient-collector.git
-cd opcua-multiclient-collector
-
-2️⃣ Backend
+  
+1️⃣ Backend
 cd backend
 npm install
 cp .env.example .env
-# configure variáveis: MONGODB_URI, OPCUA_ENDPOINTS, EMAIL_SERVICE, etc.
+# configure variáveis: mongodb_uri, Opcua_EndPoints, Email_Service, etc
 npm run dev
 
-3️⃣ Frontend
+2️⃣ Frontend
 cd ../frontend
 npm install
 npm run dev
-
-
----
-
----
 
 ## 🌎 English Version
 
@@ -276,27 +266,20 @@ Copiar código
 
 ### Steps
 
-```bash
-# 1️⃣ Clone the repository
-git clone https://github.com/youruser/opcua-multiclient-collector.git
-cd opcua-multiclient-collector
-
-# 2️⃣ Backend setup
+# 1️⃣ Backend setup
 cd backend
 npm install
 cp .env.example .env
 # configure: MONGODB_URI, OPCUA_ENDPOINTS, EMAIL_SERVICE, etc.
 npm run dev
 
-# 3️⃣ Frontend setup
+# 2️⃣ Frontend setup
 cd ../frontend
 npm install
 npm run dev
 📧 For professional contact or private repository access requests:
 viniciusmarconatto@hotmail.com
 LinkedIn: Vinicius Marconatto
-
-
 
 ---
 
@@ -342,6 +325,9 @@ Abaixo estão capturas de tela da aplicação **Multi-Client Collector**, ilustr
 <p align="center"><i>Figura 5 — <b>Service Metrics</b> — Painel técnico de diagnóstico em tempo real. Exibe métricas do <b>MongoDB</b> (conexões, latência), <b>OPC UA</b> (sessões, notificações, publish p95), <b>HTTP/Morgan</b> (requisições e tempos médios) e <b>Host</b> (uso de CPU, memória e disco). Este painel fornece uma visão consolidada da saúde operacional do backend e de seus serviços de coleta e persistência.</i></p>
 
 ---
+
+
+
 
 
 
