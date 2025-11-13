@@ -10,12 +10,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { AuthProvider } from "../../frontend/src/hooks/auth"; // nome correto
+import { AuthProvider } from "../../frontend/src/hooks/auth"; 
 import GlobalStyles from "./styles/GlobalStyles";
 import DarkTheme from "./styles/themes/dark";
 import RouterConfig from "./routes";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
-import { ThemeProvider, useTheme } from "./hooks/theme"; // <- seu ThemeContext
+import { ThemeProvider, useTheme } from "./hooks/theme";
 
 /**
  * Ponto de montagem da aplicação (div#root — index.html).
