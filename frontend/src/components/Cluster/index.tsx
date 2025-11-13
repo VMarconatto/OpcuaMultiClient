@@ -4,7 +4,7 @@
 @FILE     : src/components/Cluster/index.tsx
 @PURPOSE  : Exibir painel de status do cluster (connections, R/W por segundo,
             tráfego de rede, tamanho de dados, capacidade e % usada),
-            com polling periódico e gráfico de tendência — sem alterar lógica.
+            com polling periódico e gráfico de tendência.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
