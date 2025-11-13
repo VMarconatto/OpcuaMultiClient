@@ -3,7 +3,7 @@
 @SECTION  : UI — Client Settings / Status Box (Styles)
 @FILE     : src/components/ClientSettings/styled.ts
 @PURPOSE  : Estilos do card (container, título, imagem, tipografia e
-            responsividade) utilizando tokens do tema — sem alterar regras.
+            responsividade) utilizando tokens do tema.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
