@@ -4,7 +4,7 @@
 @FILE     : src/components/HistoryBox/index.tsx
 @PURPOSE  : Exibir séries históricas com navegação por índice ou por tempo,
             incluindo limpeza out-of-range baseada em setup e gradiente
-            dinâmico por série — sem alterar a lógica.
+            dinâmico por série.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
