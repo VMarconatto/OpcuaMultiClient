@@ -15,7 +15,7 @@ import 'styled-components'
 * Tipagens do tema global consumido pelo `ThemeProvider` do styled-components.
 *
 * As chaves abaixo devem existir no objeto de tema atual (ex.: `dark.ts`).
-* Podem ser expandidas no futuro mantendo o mesmo padrão.
+* 
 */
 declare module 'styled-components' {
 export interface DefaultTheme {
