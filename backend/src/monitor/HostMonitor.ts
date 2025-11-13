@@ -49,7 +49,7 @@ export type HostSnapshot = {
  * - Fornecer **snapshot** do último ponto e **telemetry** (série) para dashboards.
  * - Medir latência de rede via ICMP e fallback TCP (porta 443).
  *
- * Somente comentários JSDoc foram adicionados; **nenhuma** lógica foi alterada.
+ *
  */
 export class HostMonitor {
   /** Tamanho do bucket em segundos (ex.: 5s). */
