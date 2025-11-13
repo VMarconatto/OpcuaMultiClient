@@ -4,7 +4,7 @@
 @FILE     : src/pages/AlertsSent/index.tsx
 @PURPOSE  : Listar e exibir alertas já enviados (histórico), com metadados,
             destinatários e severidade. Faz o fetch no backend por client
-            ativo (deviceId → ClientXX) e renderiza cards — sem alterar lógica.
+            ativo (deviceId → ClientXX) e renderiza cards.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
