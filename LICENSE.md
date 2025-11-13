@@ -1,4 +1,4 @@
-# 📜 License (Portfólio Técnico)
+# 📜 Licença (Portfólio Técnico)
 
 Copyright (c) 2025 **Vinícius de Oliveira Marconatto**
 
