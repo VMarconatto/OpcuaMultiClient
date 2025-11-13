@@ -11,28 +11,6 @@ O sistema permite a **criação dinâmica de múltiplas instâncias independente
 
 O **frontend React/TypeScript** atua como painel de monitoramento e análise, exibindo em tempo real as variáveis coletadas, o status das conexões, alertas de limite e dashboards históricos.
 
-
----
-
-## ⚙️ Arquiterua do Sistema
-
-┌─────────────────┐        ingest (OPC UA)        ┌──────────────────┐
-│  OPC UA Servers │ ───────────────────────────▶  │  OPC UA Clients  │
-└─────────────────┘                               │  (Multi-Client)   │
-                                                  │  inside BACKEND  │
-                                                  └─────────┬────────┘
-                                                            │ write/read
-                                                            ▼
-                                                    ┌───────────────┐
-                                                    │   MongoDB     │
-                                                    └───────────────┘
-                                                            ▲
-                                             REST / WS      │
-┌─────────────────┐   HTTPS (REST/WS)   ┌─────────┴────────┐
-│    Frontend     │ ◀────────────────── │     Backend      │
-│  (React/TS)     │ ───────────────────▶│  (Node/TS API)   │
-└─────────────────┘                     └──────────────────┘
-
 - Frontend ⇄ Backend: HTTP/HTTPS (REST) e, quando necessário, WebSockets.
 - Backend ⇄ OPC UA: sessões/assinaturas mantidas pelos clientes OPC UA (node-opcua).
 - Backend ⇄ MongoDB: escrita de telemetria e leitura para as rotas da API.
