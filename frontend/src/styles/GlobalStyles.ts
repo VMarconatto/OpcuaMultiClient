@@ -13,7 +13,7 @@ import { createGlobalStyle } from 'styled-components'
 
 /**
 * Estilos globais — aplicados uma vez no topo da árvore (em `index.tsx`/`App.tsx`).
-* Mantém o reset e a tipografia conforme sua implementação original.
+*
 */
 export default createGlobalStyle`
 *{
