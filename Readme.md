@@ -43,28 +43,29 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 
 ## 🧩 Estrutura de Diretórios
 
-├── backend/
-│ ├── src/
-│ │ ├── clients/ # Instâncias OPC UA (Client01, Client02, etc.)
-│ │ ├── core/ # ClientManager, Device_WriteDB, alert schedulers
-│ │ ├── routes/ # Rotas REST (status, telemetria, histórico)
-│ │ ├── utils/ # Helpers e pipelines de agregação MongoDB
-│ │ └── config/ # Setup e limites por cliente
-│ ├── package.json
-│ ├── tsconfig.json
-│ └── .env.example
-│
-└── frontend/
+```text
+backend/
 ├── src/
-│ ├── components/ # UI Boxes (HistoryBox, WalletBox, OPCUABox, etc.)
-│ ├── hooks/ # Contextos (auth, theme, msgbox)
-│ ├── pages/ # Páginas do app (Dashboard, Login, Profile)
-│ ├── services/ # API handlers e integração backend
-│ └── styles/ # Themes e global styles
+│   ├── clients/   # Instâncias OPC UA (Client01, Client02, etc.)
+│   ├── core/      # ClientManager, Device_WriteDB, alert schedulers
+│   ├── routes/    # Rotas REST (status, telemetria, histórico)
+│   ├── utils/     # Helpers e pipelines de agregação MongoDB
+│   └── config/    # Setup e limites por cliente
+├── package.json
+├── tsconfig.json
+└── .env.example
+
+frontend/
+├── src/
+│   ├── components/  # UI Boxes (HistoryBox, WalletBox, OPCUABox, etc.)
+│   ├── hooks/       # Contextos (auth, theme, msgbox)
+│   ├── pages/       # Páginas do app (Dashboard, Login, Profile)
+│   ├── services/    # API handlers e integração backend
+│   └── styles/      # Themes e global styles
 ├── package.json
 ├── tsconfig.json
 └── public/
-└── favicon.ico
+    └── favicon.ico
 
 ---
 
