@@ -23,7 +23,7 @@
 *
 * Tipagem:
 * - Recebe a união de props de `SelectInput`, `ContentHeader` e do tema (`IThemeProps`).
-* - A tipagem original é preservada (sem alterações estruturais).
+* 
 */
 import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
