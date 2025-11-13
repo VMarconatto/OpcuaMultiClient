@@ -5,7 +5,7 @@
 @PURPOSE  : Listar todos os clients OPC UA configurados, exibir o status
             de comunicação (ativo/inativo/checando) e permitir a seleção de
             um client para edição/ativação no formulário ao lado
-@LAST_EDIT : 2025-11-11
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
