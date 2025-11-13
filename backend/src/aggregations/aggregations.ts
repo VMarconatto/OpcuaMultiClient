@@ -17,8 +17,8 @@ import { MongoClient } from "mongodb";
  * - `timestamp` entre `firstDay/firstHour` e `endDay/endHour`
  * - Resultados ordenados por `timestamp`
  *
- * Somente comentários foram adicionados; a lógica original foi mantida.
- * @param mongoClient Instância do cliente MongoDB (já conectado)
+ * Somente comentários foram adicionados;
+ * @param mongoClient Instância do cliente MongoDB 
  * @param dbName Nome do banco de dados
  * @param collectionName Nome da coleção
  * @param month Mês (1–12)
