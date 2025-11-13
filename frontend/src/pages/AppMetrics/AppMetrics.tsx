@@ -5,7 +5,7 @@
 @PURPOSE  : Painel de métricas de infraestrutura: MongoDB, Cluster, OPC UA,
             Host e HTTP (Morgan). Busca dados no backend multi-client e
             agrega/normaliza números para os cards.
-@LAST_EDIT : 2025-11-11
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
