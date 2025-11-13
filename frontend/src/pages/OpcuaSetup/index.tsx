@@ -5,7 +5,7 @@
 @PURPOSE  : Formulário para configurar o client OPC UA (endpoint, namespace,
             políticas de segurança, memória mapeada), salvar no backend,
             alternar (start/stop) a coleta e navegar por nós via Browse.
-@LAST_EDIT : 2025-11-11
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
