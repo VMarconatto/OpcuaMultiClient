@@ -35,7 +35,7 @@ Sistema de alertas (e-mail / WhatsApp) baseado em limites configurados nos arqui
 🖥️ Frontend (React + TypeScript)
 Interface de dashboards industriais com múltiplos componentes:
 
-WalletBox – KPIs agregados
+TotalizerBox – KPIs agregados
 
 HistoryBox – histórico temporal
 
