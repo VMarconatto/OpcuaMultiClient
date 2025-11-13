@@ -3,7 +3,7 @@
 @SECTION  : UI — OPC UA Box Styles
 @FILE     : src/components/OPCUABox/styled.ts
 @PURPOSE  : Estilos do painel (container, KPIs, legenda e gráfico) com filete
-            superior por severidade e responsividade — sem alterar lógica.
+            superior por severidade e responsividade.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
