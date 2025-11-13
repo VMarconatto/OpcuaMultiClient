@@ -50,10 +50,9 @@ Animações com Framer Motion
 Comunicação via Axios / Fetch com o backend
 
 Documentação completa via JSDoc padronizado
+## 🧩 Estrutura de Diretórios
+
 ```text
-🧩 Estrutura de Diretórios
-text
-Copiar código
 backend/
 ├── src/
 │   ├── clients/   # Instâncias OPC UA (Client01, Client02, etc.)
@@ -67,16 +66,16 @@ backend/
 
 frontend/
 ├── src/
-│   ├── components/  # UI Boxes (HistoryBox, WalletBox, OPCUABox, etc.)
-│   ├── hooks/       # Contextos (auth, theme, msgbox)
-│   ├── pages/       # Páginas do app (Dashboard, Login, Profile)
-│   ├── services/    # API handlers e integração backend
-│   └── styles/      # Themes e global styles
+│   ├── components/  # UI Boxes
+│   ├── hooks/       
+│   ├── pages/       
+│   ├── services/    
+│   └── styles/      
 ├── package.json
 ├── tsconfig.json
 └── public/
     └── favicon.ico
-
+```
 🧠 Tecnologias Principais
 Backend
 Tecnologia	Uso
