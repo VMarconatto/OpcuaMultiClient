@@ -76,6 +76,7 @@ frontend/
 ├── tsconfig.json
 └── public/
     └── favicon.ico
+
 🧠 Tecnologias Principais
 Backend
 Tecnologia	Uso
