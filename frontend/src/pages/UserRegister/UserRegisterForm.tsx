@@ -3,7 +3,7 @@
 @SECTION : User Management — Registration Form
 @FILE    : UserRegisterForm.tsx
 @PURPOSE : Formulário de cadastro de usuário (frontend) com validação,
-           UX de erros e POST para o backend — sem alterar a lógica original.
+           UX de erros e POST para o backend.
 @LAST_EDIT : 2025-11-10
 ** =======================================================
 */
@@ -46,22 +46,20 @@ type FormValues = {
 
 /**
  * Expressão regular para validação simples de e-mail.
- * - Não cobre todos os casos possíveis de RFC, mas atende ao fluxo do formulário.
+ * 
  */
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
 /**
  * Endpoint (exemplo) de criação de usuários.
  * Observação: o componente, no POST, usa a string literal "http://localhost:3000/users".
- * Mantivemos isso para não alterar a lógica; esta constante permanece como referência.
- * @example "http://localhost:3000/users"
  */
 const USERS_URL = "http://localhost:3000/users"; // se houver prefixo, use "http://localhost:3000/api/users"
 
 /**
  * Verifica se a senha é "forte" o suficiente segundo a regra mínima local.
  * @param pwd - senha informada pelo usuário
- * @returns `true` se o comprimento for >= 8 (regra mínima atual)
+ * @returns `true` se o comprimento for >= 8 
  */
 function isStrongPassword(pwd: string) {
   return pwd.trim().length >= 8;
@@ -72,7 +70,7 @@ function isStrongPassword(pwd: string) {
  *
  * ### Principais responsabilidades
  * - Controlar `state` dos campos
- * - Validar valores antes do submit
+ * - Validação dos valores antes do submit
  * - Exibir feedback de erros por campo e erro geral de formulário
  * - Enviar POST ao backend com os dados já sanitizados
  *
@@ -206,7 +204,6 @@ const UserRegisterForm: React.FC = () => {
         setSubmitting(true);
         setFormError(null);
 
-        // Mantido exatamente como no código original para não alterar a lógica.
         const res = await fetch("http://localhost:3000/users", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
