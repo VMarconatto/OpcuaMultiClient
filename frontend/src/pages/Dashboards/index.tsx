@@ -18,7 +18,7 @@ import { Container, Content } from "./styled";
 
 // ** Componentes visuais e contextuais **
 import ContentHeader from "../../components/ContentHeader/index";
-import WalletBox from "../../components/WalletBox";
+import TotalizerBox from "../../components/TotalizerBox";
 import PieChartBalance from "../../components/PieChart";
 import HistoryBox from "../../components/HistoryBox";
 import SetLineColor from "../../components/SetupLineColor";
@@ -308,21 +308,21 @@ const Dashboard: React.FC<
       </ContentHeader>
 
       <Content>
-        <WalletBox
+        <TotalizerBox
           title="Production"
           amount={totals?.total_FT01 || 0}
           color="#2563eb"
           unit="M³"
           icon="Droplet"
         />
-        <WalletBox
+        <TotalizerBox
           title="Caustic Soda Regeneration"
           amount={totals?.total_FT02 || 0}
           color="#db2777"
           unit="M³"
           icon="Droplet"
         />
-        <WalletBox
+        <TotalizerBox
           title="Hydrochloric Acid Regeneration"
           amount={totals?.total_FT03 || 0}
           color="#db7527"
