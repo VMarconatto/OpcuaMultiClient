@@ -4,6 +4,7 @@
 **Frontend: React + TypeScript + Styled Components**
 
 ---
+
 ## 📘 Visão Geral
 
 Este projeto implementa um **coletor de dados OPC UA multi-cliente** com arquitetura **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
@@ -20,24 +21,23 @@ O **frontend React/TypeScript** atua como painel de monitoramento e análise, ex
 - Gerencia múltiplas instâncias de `OpcuaClient` através do **ClientManager**.
 - Cada instância conecta-se a um endpoint OPC UA distinto.
 - Coleta periódica (polling) de variáveis e escrita em MongoDB.
-- Coleções dinâmicas por cliente:
-  Client01_Transmiters
-  Client02_Transmiters
-  Client03_Transmiters
+- Coleções dinâmicas por cliente:  
+  `Client01_Transmiters`, `Client02_Transmiters`, `Client03_Transmiters`
 
 - Pipeline de agregação temporal e filtragem por mês/ano, hora inicial/final.
 - Sistema de alertas (e-mail / WhatsApp) baseado em limites configurados nos arquivos `ClientXX_setuptsconfig.json`.
 
 ### 🖥️ Frontend (React + TypeScript)
+
 - Interface de dashboards industriais com múltiplos componentes:
-- **WalletBox** – KPIs agregados.  
-- **HistoryBox** – histórico temporal.  
-- **PieChartBalance** – relação de falhas por variável.  
-- **MongoDBBox / OPCUABox / HostMetricsBox** – status de infraestrutura.  
-- Estilização modular via **styled-components**.  
-- Animações com **Framer Motion**.  
-- Comunicação via **Axios / Fetch** com o backend.  
-- Documentação completa via **JSDoc** padronizado.
+  - **WalletBox** – KPIs agregados  
+  - **HistoryBox** – histórico temporal  
+  - **PieChartBalance** – relação de falhas por variável  
+  - **MongoDBBox / OPCUABox / HostMetricsBox** – status de infraestrutura  
+- Estilização modular via **styled-components**  
+- Animações com **Framer Motion**  
+- Comunicação via **Axios / Fetch** com o backend  
+- Documentação completa via **JSDoc** padronizado
 
 ---
 
@@ -66,7 +66,6 @@ frontend/
 ├── tsconfig.json
 └── public/
     └── favicon.ico
-
 ---
 
 ## 🧠 Tecnologias Principais
