@@ -1,4 +1,4 @@
-# 📜 Showcase License (Portfólio Técnico)
+# 📜 License (Portfólio Técnico)
 
 Copyright (c) 2025 **Vinícius de Oliveira Marconatto**
 
