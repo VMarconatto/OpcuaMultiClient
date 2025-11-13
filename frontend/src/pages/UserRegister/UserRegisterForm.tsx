@@ -4,7 +4,7 @@
 @FILE    : UserRegisterForm.tsx
 @PURPOSE : Formulário de cadastro de usuário (frontend) com validação,
            UX de erros e POST para o backend.
-@LAST_EDIT : 2025-11-10
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
