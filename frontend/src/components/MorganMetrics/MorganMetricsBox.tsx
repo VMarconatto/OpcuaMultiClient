@@ -5,7 +5,7 @@
 @PURPOSE  : Exibir métricas HTTP coletadas (via Morgan/telemetria) com
             painel de status, KPIs e minigráfico (RPM x p95), fazendo
             polling periódico de /http/status e /http/telemetry.
-@LAST_EDIT : 2025-11-11
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
