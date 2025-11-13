@@ -50,7 +50,7 @@ Animações com Framer Motion
 Comunicação via Axios / Fetch com o backend
 
 Documentação completa via JSDoc padronizado
-
+```text
 🧩 Estrutura de Diretórios
 text
 Copiar código
