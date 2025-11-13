@@ -38,7 +38,7 @@ return <List tagColor={""} key={type} {...props} />;
 * - Renderizar `Layout` com controles da UI (options/controllers)
 * - Expor `Outlet` para as rotas filhas
 *
-* Apenas comentários/JSDoc adicionados; a lógica foi mantida.
+*
 */
 const App: React.FC<
 IContentHeaderProps & ISelectInputProps & IOPCUABoxProps
