@@ -121,6 +121,7 @@ Copiar código
 cd ../frontend
 npm install
 npm run dev
+'''
 🖼️ Interface Preview
 Abaixo estão capturas de tela da aplicação Multi-Client Collector, ilustrando o frontend React e os principais painéis industriais do sistema.
 
