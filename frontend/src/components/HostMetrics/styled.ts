@@ -4,7 +4,7 @@
 @FILE     : src/components/HostMetricsBox/styled.ts
 @PURPOSE  : Estilização do HostMetricsBox (layout, paleta temática e badges),
             incluindo filete superior que reflete o status agregado.
-@LAST_EDIT : 2025-11-11
+@LAST_EDIT : 2025-10-26
 ** =======================================================
 */
 
