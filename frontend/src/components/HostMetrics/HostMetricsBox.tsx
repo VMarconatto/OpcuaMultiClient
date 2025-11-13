@@ -4,7 +4,7 @@
 @FILE     : src/components/HostMetricsBox/HostMetricsBox.tsx
 @PURPOSE  : Exibir métricas de host (CPU, memória, disco, rede e processo)
             a partir de snapshot local (override) ou self-fetch com polling,
-            e sintetizar um status global (ok/warn/danger) — sem alterar lógica.
+            e sintetizar um status global (ok/warn/danger).
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
