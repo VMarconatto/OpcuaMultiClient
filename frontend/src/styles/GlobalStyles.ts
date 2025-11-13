@@ -2,7 +2,7 @@
 ** =======================================================
 @SECTION : Styled-Components — Global Styles
 @FILE : GlobalStyles.ts
-@PURPOSE : Definir estilos globais da aplicação (reset básico, fonte, cursor e overflow) sem alterar a lógica.
+@PURPOSE : Definir estilos globais da aplicação (reset básico, fonte, cursor e overflow).
 @LAST_EDIT : 2025-11-10
 ** =======================================================
 */
