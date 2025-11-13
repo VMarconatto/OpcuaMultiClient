@@ -3,7 +3,7 @@
 @SECTION  : React Context — Device Selector
 @FILE     : src/contexts/DeviceContext.tsx
 @PURPOSE  : Fornecer contexto global para identificação e troca do device
-            ativo (deviceId) no frontend — sem alterar a lógica de negócio.
+            ativo (deviceId) no frontend.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

@@ -3,7 +3,7 @@
 @SECTION  : UI — History Alerts Card (Styles)
 @FILE     : src/components/HistoryAlertsCard/style.ts
 @PURPOSE  : Estilização do cartão de histórico de alertas com tag colorida,
-            tipografia ajustada e efeitos de hover — sem alterar lógica.
+            tipografia ajustada e efeitos de hover.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

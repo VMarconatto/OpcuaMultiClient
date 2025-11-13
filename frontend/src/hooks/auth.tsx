@@ -4,7 +4,7 @@
 @FILE     : src/hooks/auth.tsx
 @PURPOSE  : Fornecer contexto de autenticação (estado `logged` e ações
             `signIn` / `signOut`) para toda a aplicação, incluindo
-            sincronização inicial com `/auth/me` — sem alterar lógica.
+            sincronização inicial com `/auth/me`.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

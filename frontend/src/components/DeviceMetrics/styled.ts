@@ -3,7 +3,7 @@
 @SECTION  : UI — Device Metrics Panel (Styles)
 @FILE     : src/components/DeviceMetrics/styled.ts
 @PURPOSE  : Estilização do painel de métricas do dispositivo, abrangendo layout,
-            responsividade e aparência de ícones e textos — sem alterar lógica.
+            responsividade e aparência de ícones e textos.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

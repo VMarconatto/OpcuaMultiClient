@@ -3,7 +3,7 @@
 @SECTION  : UI — History Alerts Card
 @FILE     : src/components/HistoryAlertsCard/index.tsx
 @PURPOSE  : Exibir cartão compacto com histórico de alertas (título, subtítulo,
-            quantidade e cor do tipo de alerta) — sem alterar lógica.
+            quantidade e cor do tipo de alerta).
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

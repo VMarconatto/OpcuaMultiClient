@@ -3,7 +3,7 @@
 @SECTION  : MongoDB — Cluster Panel Box (Styles)
 @FILE     : src/components/Cluster/styled.ts
 @PURPOSE  : Estilos do card (layout em dois lados, pílula de status,
-            legenda de indicadores e gráfico de Data Size) — sem alterar regras.
+            legenda de indicadores e gráfico de Data Size).
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

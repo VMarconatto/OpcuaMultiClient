@@ -4,7 +4,7 @@
 @FILE     : src/components/Aside/index.tsx
 @PURPOSE  : Renderizar a navegação lateral (logo + grupos de links com
             dropdowns) para acessar Dashboard, Métricas e telas de Setup.
-            Mantém estado de expansão e item ativo — sem alterar lógica.
+            Mantém estado de expansão e item ativo.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

@@ -3,7 +3,7 @@
 @SECTION  : UI — HistoryBox (Styles)
 @FILE     : src/components/HistoryBox/styled.ts
 @PURPOSE  : Estilos de layout/tema para o gráfico histórico, incluindo header,
-            legenda, rótulo de unidade e camadas para navegação — sem alterar lógica.
+            legenda, rótulo de unidade e camadas para navegação.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */

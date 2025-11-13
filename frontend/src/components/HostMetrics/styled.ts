@@ -3,7 +3,7 @@
 @SECTION  : UI — Host Metrics Box (Styles)
 @FILE     : src/components/HostMetricsBox/styled.ts
 @PURPOSE  : Estilização do HostMetricsBox (layout, paleta temática e badges),
-            incluindo filete superior que reflete o status agregado — sem alterar lógica.
+            incluindo filete superior que reflete o status agregado.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
