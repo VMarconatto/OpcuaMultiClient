@@ -4,7 +4,7 @@
 @FILE     : src/components/SetLineColor/index.tsx
 @PURPOSE  : Permitir ao usuário definir/alterar a cor de cada variável exibida
             em gráficos de linha, lendo a lista de variáveis do backend e
-            propagando um mapa (tag → cor) ao componente pai — sem alterar lógica.
+            propagando um mapa (tag → cor) ao componente pai.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
