@@ -18,7 +18,6 @@ import App from "./App";
 
 
 // Teste de smoke — garante que o componente monta e contém o texto esperado
-// Mantido exatamente como no arquivo original (apenas comentários e cabeçalho adicionados)
 
 test("renders learn react link", () => {
 render(
