@@ -4,7 +4,7 @@
 @FILE     : src/components/ClientSettings/index.tsx
 @PURPOSE  : Exibir um cartão com título, descrição, ícone e informações
             de status OPC UA (quando fornecidas), incluindo sessão, latência,
-            leituras e erros por nó — sem alterar lógica.
+            leituras e erros por nó.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
