@@ -3,7 +3,7 @@
 @SECTION  : UI — Wallet Box
 @FILE     : src/components/WalletBox/index.tsx
 @PURPOSE  : Exibir valor agregado de uma métrica (produção, dosagem, etc.)
-            com contagem animada, ícone e indicador de unidade — sem alterar lógica.
+            com contagem animada, ícone e indicador de unidade.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
@@ -26,7 +26,7 @@ import { Factory } from "lucide-react";
  * @property color        Cor principal do gradiente de fundo.
  * @property unit         Unidade de medida opcional (ex.: “L”, “kg”, “m³”).
  */
-export interface IWalletBoxProps {
+export interface ITotalizerBoxProps {
   title: string;
   amount: number;
   footerlabel?: string;
@@ -49,7 +49,7 @@ export interface IWalletBoxProps {
  * - Pode ser utilizado em dashboards de métricas gerais (produção, consumo, etc.).
  * - O ícone padrão é o `<Factory />` do `lucide-react`.
  */
-const WalletBox: React.FC<IWalletBoxProps> = ({
+const TotalizerBox: React.FC<ITotalizerBoxProps> = ({
   title,
   amount,
   footerlabel,
@@ -88,4 +88,4 @@ const WalletBox: React.FC<IWalletBoxProps> = ({
   );
 };
 
-export default WalletBox;
+export default TotalizerBox;
