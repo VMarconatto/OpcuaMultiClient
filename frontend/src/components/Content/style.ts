@@ -3,7 +3,7 @@
 @SECTION  : UI — Content Wrapper (Styles)
 @FILE     : src/components/Content/style.ts
 @PURPOSE  : Estilos do contêiner principal (gradiente, vinheta, scroll
-            customizado e dimensões) — sem alterar lógica de renderização.
+            customizado e dimensões).
 @LAST_EDIT: 2025-11-11
 ** =======================================================
 */
