@@ -3,7 +3,7 @@
 @SECTION : React — App Shell & Test
 @FILE : App.tsx / App.test.tsx
 @PURPOSE : Aplicar cabeçalho e JSDoc leves no App principal e seu teste.
-@LAST_EDIT : 2025-11-10
+@LAST_EDIT : 2025-10-27
 ** =======================================================
 */
 
