@@ -256,7 +256,7 @@ const OpcuaClientForm: React.FC = () => {
 
   /**
    * Adiciona o `nodeId` do item escolhido na lista `mapMemory`.
-   * - Ignora duplicatas.
+   * 
    */
   const addFromBrowse = (ref: BrowseRef) => {
     if (!ref?.nodeId) return;
