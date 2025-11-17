@@ -86,7 +86,7 @@ export const AlertCard = styled.div`
       rgba(0,0,0,0.48) 100%),
     /* degradê principal Itália */
     linear-gradient(135deg, ${italianGreen},${italianWhite},${italianRed});
-  background-blend-mode: overlay, normal;              /* 👈 sai o azul do accent, entra a base escura */
+  background-blend-mode: overlay, normal;             
   border: 1px solid var(--card-border);
   padding: 0.9rem 1rem;
   margin-bottom: 0.9rem;
