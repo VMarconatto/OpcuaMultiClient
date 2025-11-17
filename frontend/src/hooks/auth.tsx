@@ -11,9 +11,6 @@
 
 import React, { createContext, useState, useContext, useEffect } from "react";
 
-/**
- * Propriedades expostas pelo contexto de autenticação.
- */
 interface IAuthContextProps {
   /** Flag indicando sessão autenticada. */
   logged: boolean;
@@ -34,7 +31,7 @@ interface IAuthContextProps {
 /** Contexto de autenticação. */
 const AuthContext = createContext<IAuthContextProps>({} as IAuthContextProps);
 
-/** Base do backend (mantida). */
+/** Base do backend. */
 const AUTH_BASE = "http://localhost:3000";
 
 /**
