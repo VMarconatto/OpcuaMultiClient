@@ -113,7 +113,6 @@ const UserRegisterForm: React.FC = () => {
     "confirmPassword"
   >>(null);
 
-  /** Memo simples para ler `submitting` e expor como `isLoading` */
   const isLoading = useMemo(() => submitting, [submitting]);
 
   /**
@@ -139,30 +138,30 @@ const UserRegisterForm: React.FC = () => {
   const validate = (v: FormValues) => {
     const next: Partial<Record<keyof FormValues, string>> = {};
 
-    if (!v.fullName.trim()) next.fullName = "Informe o nome completo.";
+    if (!v.fullName.trim()) next.fullName = "Enter your full name.";
     else if (v.fullName.trim().split(" ").length < 2)
       next.fullName = "Use nome e sobrenome.";
 
-    if (!v.jobTitle.trim()) next.jobTitle = "Informe o cargo.";
+    if (!v.jobTitle.trim()) next.jobTitle = "Enter the position.";
 
     if (!v.companyEmail.trim())
-      next.companyEmail = "Informe o e-mail corporativo.";
+      next.companyEmail = "Enter your corporate email.";
     else if (!emailRegex.test(v.companyEmail))
       next.companyEmail = "E-mail inválido.";
 
-    if (!v.contactNumber.trim()) next.contactNumber = "Informe o telefone.";
+    if (!v.contactNumber.trim()) next.contactNumber = "Provide the phone number.";
     else if (v.contactNumber.replace(/\D/g, "").length < 10)
-      next.contactNumber = "Telefone incompleto.";
+      next.contactNumber = "Incomplete phone number.";
 
-    if (!v.userLevel.trim()) next.userLevel = "Informe o nível de usuário.";
+    if (!v.userLevel.trim()) next.userLevel = "Enter the user level.";
 
-    if (!v.password.trim()) next.password = "Informe a senha.";
+    if (!v.password.trim()) next.password = "Enter the password.";
     else if (!isStrongPassword(v.password))
       next.password = "Mínimo de 8 caracteres.";
 
-    if (!v.confirmPassword.trim()) next.confirmPassword = "Confirme a senha.";
+    if (!v.confirmPassword.trim()) next.confirmPassword = "Confirm the password.";
     else if (v.password !== v.confirmPassword)
-      next.confirmPassword = "As senhas não coincidem.";
+      next.confirmPassword = "The passwords do not match.";
 
     return next;
   };
@@ -234,13 +233,13 @@ const UserRegisterForm: React.FC = () => {
         if (res.status === 409) {
           setErrors((prev) => ({
             ...prev,
-            companyEmail: data?.error || "E-mail já cadastrado.",
+            companyEmail: data?.error || "Email already registered.",
           }));
           return;
         }
 
         if (res.status === 400) {
-          const msg = String(data?.error || "Erro de validação.");
+          const msg = String(data?.error || "Validation error.");
           if (/password/i.test(msg))
             setErrors((p) => ({ ...p, password: msg }));
           else if (/email/i.test(msg))
@@ -251,7 +250,7 @@ const UserRegisterForm: React.FC = () => {
 
         if (res.status === 503) {
           setFormError(
-            "Serviço temporariamente indisponível. Tente novamente em instantes."
+            "Service temporarily unavailable. Please try again shortly.."
           );
           return;
         }
@@ -259,12 +258,12 @@ const UserRegisterForm: React.FC = () => {
         // Fallback genérico
         setFormError(
           data?.error ||
-            "Não foi possível concluir o cadastro. Tente novamente."
+            "Registration could not be completed. Please try again.."
         );
       } catch {
         if (!cancelled)
           setFormError(
-            "Falha de rede. Verifique sua conexão e tente novamente."
+            "Network failure. Check your connection and try again."
           );
       } finally {
         if (!cancelled) {
@@ -282,7 +281,7 @@ const UserRegisterForm: React.FC = () => {
   return (
     <Form onSubmit={handleSubmit} noValidate>
       <Header>
-        <Title>Cadastro de Usuário</Title>
+        <Title>User Registration</Title>
         <Subtitle>
           Preencha os dados abaixo para criar um novo usuário.
         </Subtitle>
@@ -326,7 +325,7 @@ const UserRegisterForm: React.FC = () => {
           <Input
             id="companyEmail"
             type="email"
-            placeholder="nome.sobrenome@empresa.com"
+            placeholder="name@company.com"
             value={values.companyEmail}
             onChange={handleChange("companyEmail")}
             aria-invalid={!!errors.companyEmail}
