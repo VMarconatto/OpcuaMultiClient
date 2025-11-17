@@ -51,7 +51,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
   /**
    * Sincroniza com /auth/me ao montar (útil para Header, etc.).
-   * (Observação: não anotamos o retorno como `: void` para permitir cleanup)
+   * 
    */
   useEffect(() => {
     let alive = true;
@@ -62,8 +62,8 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
         const ok = res.ok && !!data?.user;
         if (!alive) return;
         setLogged(ok);
-        if (ok) localStorage.setItem("@minha-carteira:logged", "true");
-        else localStorage.removeItem("@minha-carteira:logged");
+        if (ok) localStorage.setItem("@minha-conta:logged", "true");
+        else localStorage.removeItem("@minha-conta:logged");
       } catch {
         if (alive) setLogged(false);
       }
@@ -79,7 +79,7 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
    */
   const signIn = (email: string, password: string): void => {
     if (email === "mycompany@hotmail.com" && password === "123") {
-      localStorage.setItem("@minha-carteira:logged", "true");
+      localStorage.setItem("@minha-conta:logged", "true");
       setLogged(true);
     } else {
       alert("Senha ou usuário inválidos");
@@ -92,9 +92,8 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
    * @returns {void}
    */
   const signOut = (): void => {
-    localStorage.removeItem("@minha-carteira:logged");
+    localStorage.removeItem("@minha-conta:logged");
     setLogged(false);
-    // opcional: tente avisar o backend se houver /auth/logout
     // fetch(`${AUTH_BASE}/auth/logout`, { method: "POST", credentials: "include" }).catch(() => {});
   };
 
