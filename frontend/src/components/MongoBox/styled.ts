@@ -166,7 +166,7 @@ export const Value = styled.span`
 
 /**
  * Lista de indicadores com rolagem.
- * @note Quando `disconnected`, destacamos visualmente a área.
+ * @note Quando `disconnected`, destaca visualmente a área.
  */
 export const LegendContainer = styled.ul`
   list-style: none;
