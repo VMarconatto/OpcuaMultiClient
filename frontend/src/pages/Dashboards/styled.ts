@@ -37,7 +37,7 @@ export const Container = styled.div`
 `;
 
 /**
- * Área de conteúdo do Dashboard (WalletBoxes, gráficos, histórico).
+ * Área de conteúdo do Dashboard (totalizerboxes, gráficos, histórico).
  * - Layout flexível com quebra automática em telas menores.
  */
 export const Content = styled.div`
