@@ -233,7 +233,7 @@ const AppMetrics: React.FC = () => {
   }, [mongoStatus]);
 
   /**
-   * Dados auxiliares para status simples do MongoDB (badge rápido).
+   * Dados auxiliares para status simples do MongoDB.
    * @returns {Array<{name:string, amount:number, percent:number, color:string}>}
    */
   const mongoStatusChartData = useMemo(() => {
