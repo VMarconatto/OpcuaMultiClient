@@ -43,7 +43,7 @@ type AlertEntry = {
   clientId?: string;
 };
 
-/** Conjunto de chaves tratadas como metadados (não são o nome do tag). */
+/** Conjunto de chaves tratadas como metadados. */
 const KNOWN_META = new Set(["Desvio", "AlertsCount", "Unidade"]);
 
 /**
@@ -60,7 +60,7 @@ const AlertsSent: React.FC = ()  => {
   /** Client atual (do contexto global). */
   const { deviceId } = useDevice();
 
-  /** Base do backend (mantida). */
+  /** Base do backend. */
   const API_BASE = "http://localhost:3000";
 
   /**
