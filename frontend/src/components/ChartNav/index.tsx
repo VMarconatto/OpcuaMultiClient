@@ -4,7 +4,7 @@
 @FILE     : src/components/ChartNav/index.tsx
 @PURPOSE  : Renderizar botões de navegação SVG (← e →) diretamente
             dentro do gráfico Recharts, permitindo paginação/scroll
-            entre janelas de dados. Mantém toda a lógica e coordenadas.
+            entre janelas de dados.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
@@ -32,7 +32,6 @@ const ChartNav: React.FC<{
 }> = (userProps) => {
   // Recharts injeta dimensões/margens aqui:
   // (v3: chartWidth/chartHeight/offset)  (v2: width/height/margin)
-  // usamos todos com fallback seguro:
   
   const p: any = userProps;
   const W = p.chartWidth ?? p.width ?? p.viewBox?.width ?? 0;
