@@ -29,7 +29,6 @@ export const Container = styled.div`
   padding: 2rem;             /* (mesma medida) */
   border-radius: 10px;       /* (mesma medida) */
 
-  /* fundo original mantido */
   background:
     radial-gradient(10% 220% at 78% 50%,
       rgba(0,0,0,0) 40%,
@@ -42,7 +41,7 @@ export const Container = styled.div`
   margin-top: -10px;         /* (mesma medida) */
 `;
 
-/** Wrapper central para o formulário de configuração (lado a lado). */
+/** Wrapper central para o formulário de configuração. */
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
