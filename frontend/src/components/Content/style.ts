@@ -79,7 +79,7 @@ export const Container = styled.div<ContainerProps>`
   flex-wrap: wrap;
   gap: 10px; */
 
-  display: block; /* ✅ Faz com que os filhos (como AlertsSent) se comportem como blocos */
+  display: block; /* Faz com que os filhos (como AlertsSent) se comportem como blocos */
 
   /* Scroll personalizado */
   scrollbar-width: thin;
