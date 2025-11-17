@@ -4,7 +4,6 @@
 @FILE     : src/components/Aside/styles.ts
 @PURPOSE  : Estilos do componente de navegação lateral: container com
             vinheta/gradiente, grupos expansíveis, caret animado e submenu.
-            Mantém a identidade visual Itália — sem alterar regras.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
@@ -235,7 +234,7 @@ export const SubMenu = styled.div`
 `;
 
 /**
- * Item do submenu (link). Usa prop `$active` só no CSS (não vai ao DOM).
+ * Item do submenu (link). Usa prop `$active` no CSS.
  * @param $active Destaca visualmente o item ativo.
  */
 export const SubMenuItem = styled.a<{ $active?: boolean }>`
@@ -274,7 +273,7 @@ export const SubMenuItem = styled.a<{ $active?: boolean }>`
   `}
 `;
 
-/* ====== NOVOS ESTILOS PARA O GRUPO "CREATE APPLICATION" ====== */
+/* ====== ESTILOS PARA O GRUPO "CREATE APPLICATION" ====== */
 /** Wrapper do grupo "Create Application" (herda de DashboardGroup). */
 export const CreateGroup = styled(DashboardGroup)``;
 /** Botão do grupo "Create" (herda de DashboardToggle). */
