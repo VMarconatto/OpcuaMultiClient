@@ -12,7 +12,7 @@ import styled from 'styled-components';
 
 /**
  * Container do card de configurações/status do cliente.
- * - Mantém dimensões, espaçamentos e tipografia originais.
+ * 
  */
 export const Container = styled.div`
   width: 49.5%;
