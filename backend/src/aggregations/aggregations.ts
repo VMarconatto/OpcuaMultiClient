@@ -80,7 +80,7 @@ export async function getMBData(
  * - Agrupa e soma campos numéricos principais (FT01, FT02, FT03).
  * - Retorna um único documento com os totais.
  *
- * Somente comentários foram adicionados; a lógica original foi mantida.
+ *
  * @param dbName Nome do banco de dados
  * @param collectionName Nome da coleção
  * @param month Mês (1–12)
