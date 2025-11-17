@@ -4,7 +4,7 @@
 @FILE     : src/pages/OpcuaClientList/styled.ts
 @PURPOSE  : Estilização (styled-components) para a listagem de clients OPC UA:
             container, wrapper do formulário, grade de cards, ícones e badges
-            de status — sem alterar nenhuma regra visual existente.
+            de status
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
