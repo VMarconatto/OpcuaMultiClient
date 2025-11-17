@@ -48,7 +48,7 @@ export const Container = styled.div<ContainerProps>`
 
   /* Efeito Itália (mesmas cores do Signin) + contraste proporcional ao header */
   background:
-    /* vinheta/contraste — focalizada à direita (onde ficam os ícones) */
+    /* vinheta/contraste — focalizada à direita*/
     radial-gradient(10% 220% at 78% 50%,
       rgba(0,0,0,0) 40%,
       rgba(0,0,0,0.32) 78%,
