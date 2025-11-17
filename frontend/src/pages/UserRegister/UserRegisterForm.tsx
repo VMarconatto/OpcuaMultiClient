@@ -140,14 +140,14 @@ const UserRegisterForm: React.FC = () => {
 
     if (!v.fullName.trim()) next.fullName = "Enter your full name.";
     else if (v.fullName.trim().split(" ").length < 2)
-      next.fullName = "Use nome e sobrenome.";
+      next.fullName = "Use first and last name.";
 
     if (!v.jobTitle.trim()) next.jobTitle = "Enter the position.";
 
     if (!v.companyEmail.trim())
       next.companyEmail = "Enter your corporate email.";
     else if (!emailRegex.test(v.companyEmail))
-      next.companyEmail = "E-mail inválido.";
+      next.companyEmail = "Invalid email.";
 
     if (!v.contactNumber.trim()) next.contactNumber = "Provide the phone number.";
     else if (v.contactNumber.replace(/\D/g, "").length < 10)
@@ -157,7 +157,7 @@ const UserRegisterForm: React.FC = () => {
 
     if (!v.password.trim()) next.password = "Enter the password.";
     else if (!isStrongPassword(v.password))
-      next.password = "Mínimo de 8 caracteres.";
+      next.password = "Minimum of 8 characters.";
 
     if (!v.confirmPassword.trim()) next.confirmPassword = "Confirm the password.";
     else if (v.password !== v.confirmPassword)
@@ -283,7 +283,7 @@ const UserRegisterForm: React.FC = () => {
       <Header>
         <Title>User Registration</Title>
         <Subtitle>
-          Preencha os dados abaixo para criar um novo usuário.
+          Fill in the information below to create a new user.
         </Subtitle>
       </Header>
 
@@ -420,7 +420,7 @@ const UserRegisterForm: React.FC = () => {
 
       <Actions>
         <Button type="submit" disabled={isLoading} aria-busy={isLoading}>
-          {isLoading ? "Salvando..." : "Cadastrar"}
+          {isLoading ? "Saving... : Registerr"}
         </Button>
       </Actions>
     </Form>
