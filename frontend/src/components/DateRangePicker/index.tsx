@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — DateRangePicker (Ano/Mês/Dia + Hora)
-@FILE     : src/components/DateRangePicker/index.tsx
-@PURPOSE  : Componente dropdown para seleção de intervalo de datas e horas,
-            com saneamento básico e fechamento ao clicar fora.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import {
