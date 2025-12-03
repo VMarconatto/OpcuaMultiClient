@@ -1,15 +1,5 @@
-/**
-** =======================================================
-@SECTION : Styled-Components — Theme Typings
-@FILE : styled.d.ts
-@PURPOSE : Declarar o shape do `DefaultTheme` para o TypeScript reconhecer as cores e tokens do tema.
-@LAST_EDIT : 2025-11-10
-** =======================================================
-*/
-
 
 import 'styled-components'
-
 
 /**
 * Tipagens do tema global consumido pelo `ThemeProvider` do styled-components.
