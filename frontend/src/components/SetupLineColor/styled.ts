@@ -1,10 +1,6 @@
 
 import styled from 'styled-components';
 
-/**
- * Container geral do card de configuração de cores.
- * @remarks Layout flex em coluna, com área interna rolável para a lista de variáveis.
- */
 export const Container = styled.div`
   width: 49.8%;
   height: 420px;
@@ -43,7 +39,6 @@ export const Container = styled.div`
     color: #ffffff;
   }
 
-  /* Área rolável que contém os itens (tag → select de cor) */
   .color-items-scroll {
     max-height: 300px;
     overflow-y: auto;
@@ -61,7 +56,6 @@ export const Container = styled.div`
     }
   }
 
-  /* Linha de item (nome + unidade + select de cor) */
   .color-item {
     display: flex;
     align-items: center;
