@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 const italianGreen = "#21bd3a";
-/** Brilho suave para sombras (efeito neon leve). */
+
 const italianGlow = "rgba(46,203,18,.28)";
 
 export const Container = styled.div`
