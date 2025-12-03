@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Set Line Color Box Styles
-@FILE     : src/components/SetLineColor/styled.ts
-@PURPOSE  : Estilização do card de seleção de cores (container, lista rolável
-            e itens com seletor).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
