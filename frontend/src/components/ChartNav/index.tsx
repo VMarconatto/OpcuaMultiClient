@@ -1,14 +1,3 @@
-/**
-** =======================================================
-@SECTION  : Charts — Chart Navigation Controls
-@FILE     : src/components/ChartNav/index.tsx
-@PURPOSE  : Renderizar botões de navegação SVG (← e →) diretamente
-            dentro do gráfico Recharts, permitindo paginação/scroll
-            entre janelas de dados.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
-
 
 /**
  * Componente de navegação (botões anteriores/próximos)
