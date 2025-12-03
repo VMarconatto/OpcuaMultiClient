@@ -1,17 +1,6 @@
-/**
-** =======================================================
-@SECTION  : OPC UA — Client Setup & Control (UI)
-@FILE     : src/pages/OpcuaSetup/styled.ts
-@PURPOSE  : Styled-components da página de configuração OPC UA, incluindo
-            container, grid do formulário, chips de `mapMemory`, botões
-            de ação e componentes de modal (Msgbox) reaproveitados.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
-/** Paleta usada nos gradientes e feedbacks (tema Itália). */
 const italianGreen = "#21bd3a";
 const italianDark = "#121212";
 const italianRed = "#ff2d2d";
@@ -21,9 +10,6 @@ const neon = "rgba(46, 203, 18, 0.9)";
 const glowGreen = "rgba(46,203,18,.28)";
 const glowRed = "rgba(255,45,45,.28)";
 
-/**
- * Container geral da página: centraliza conteúdo e aplica fundo temático.
- */
 export const Container = styled.div`
   margin: 32px auto;
   padding: 1.5rem;
@@ -53,7 +39,6 @@ export const Container = styled.div`
   }
 `;
 
-/** Grade do formulário: 2 colunas (colapsa para 1 em telas menores). */
 export const FormGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
@@ -64,21 +49,18 @@ export const FormGrid = styled.div`
   }
 `;
 
-/** Grupo de campo com espaçamento vertical consistente. */
 export const FormGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
 `;
 
-/** Rótulo dos campos. */
 export const Label = styled.label`
   font-weight: 600;
   color: ${({ theme }) => theme.textPrimary};
   opacity: .95;
 `;
 
-/** Input básico com foco acessível e feedback visual. */
 export const Input = styled.input`
   width: 100%;
   padding: 10px 12px;
@@ -99,7 +81,6 @@ export const Input = styled.input`
   }
 `;
 
-/** Botão de adicionar NodeId (ou abrir navegador de nós). */
 export const AddButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -118,7 +99,6 @@ export const AddButton = styled.button`
   &:active { transform: translateY(1px); }
 `;
 
-/** Lista flexível de chips com os NodeIds mapeados. */
 export const ChipList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -126,7 +106,6 @@ export const ChipList = styled.div`
   margin-top: 10px;
 `;
 
-/** Chip (pill) que exibe o NodeId + botão de remoção. */
 export const Chip = styled.span`
   display: inline-flex;
   align-items: center;
@@ -143,7 +122,6 @@ export const Chip = styled.span`
   overflow: hidden;
 `;
 
-/** Botão circular para remover um item do `mapMemory`. */
 export const ChipRemove = styled.button`
   display: inline-flex;
   align-items: center;
@@ -161,7 +139,6 @@ export const ChipRemove = styled.button`
   &:active { transform: translateY(1px); }
 `;
 
-/** Linha de ações (Salvar / Ativar-Desativar). */
 export const ActionsRow = styled.div`
   display: flex;
   gap: 10px;
@@ -169,7 +146,6 @@ export const ActionsRow = styled.div`
   margin-top: 18px;
 `;
 
-/** Botão de envio do formulário (Salvar). */
 export const SubmitButton = styled.button`
   display: inline-flex;
   align-items: center;
@@ -197,8 +173,6 @@ export const StatusDot = styled.span<{ active: boolean }>`
   background: ${({ active }) => (active ? italianGreen : italianRed)};
   box-shadow: 0 0 12px ${({ active }) => (active ? glowGreen : glowRed)};
 `;
-
-/** Botão de alternância (Ativar/Desativar coleta). */
 export const ToggleButton = styled.button<{ active: boolean }>`
   display: inline-flex;
   align-items: center;
@@ -218,9 +192,6 @@ export const ToggleButton = styled.button<{ active: boolean }>`
   &:disabled { opacity: .6; cursor: not-allowed; }
 `;
 
-/* ================== MSGBOX (Modal) ================== */
-
-/** Overlay escurecido com blur para modais. */
 export const MsgboxOverlay = styled.div`
   position: fixed;
   inset: 0;
@@ -232,7 +203,6 @@ export const MsgboxOverlay = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-/** Card do modal (corpo). */
 export const MsgboxCard = styled.div`
   width: min(520px, 92vw);
   padding: 18px 18px 14px;
@@ -251,7 +221,6 @@ export const MsgboxCard = styled.div`
   color: ${({ theme }) => theme.textPrimary};
 `;
 
-/** Título do modal. */
 export const MsgboxTitle = styled.h3`
   margin: 0 0 8px;
   font-size: 1.2rem;
@@ -259,21 +228,19 @@ export const MsgboxTitle = styled.h3`
   letter-spacing: .2px;
 `;
 
-/** Texto descritivo dentro do modal. */
 export const MsgboxText = styled.p`
   margin: 0 0 14px;
   font-size: .98rem;
   opacity: .94;
 `;
 
-/** Linha de ações do modal. */
+
 export const MsgboxActions = styled.div`
   display: flex;
   gap: 8px;
   justify-content: flex-end;
 `;
 
-/** Botão primário do modal (Confirmar). */
 export const MsgboxButton = styled.button`
   padding: 10px 14px;
   border-radius: 12px;
@@ -295,7 +262,6 @@ export const MsgboxButton = styled.button`
   &:active { transform: translateY(1px); }
 `;
 
-/** Botão secundário do modal (Cancelar/Fechar). */
 export const MsgboxCancelButton = styled.button`
   padding: 10px 14px;
   border-radius: 12px;
