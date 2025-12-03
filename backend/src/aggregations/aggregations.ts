@@ -1,11 +1,3 @@
-/**
-** =======================================================
-@SECTION : Mongo Aggregations — Histórico e Totais
-@FILE : aggregations.ts
-@PURPOSE : Fornecer funções de agregação temporal para consultas históricas e totais de variáveis industriais no MongoDB.
-@LAST_EDIT : 2025-11-10
-** =======================================================
-*/
 
 import { getConnectedClient } from "../Repositories/mongoose.js";
 import { MongoClient } from "mongodb";
