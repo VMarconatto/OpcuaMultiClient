@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION : Express Server Bootstrap
-@FILE : index.ts
-@PURPOSE : Inicializar servidor Express, configurar rotas, middlewares,
-métricas HTTP, agendadores, conexões Mongo e clients OPC UA.
-@LAST_EDIT : 2025-11-10
-** =======================================================
- */
 
 import express from "express";
 import cors from "cors";
