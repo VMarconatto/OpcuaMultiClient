@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — MongoDB Box Styles
-@FILE     : src/components/MongoDBBox/styled.ts
-@PURPOSE  : Estilização do painel de métricas do MongoDB (estrutura, status,
-            legenda e área do gráfico) utilizando styled-components.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
