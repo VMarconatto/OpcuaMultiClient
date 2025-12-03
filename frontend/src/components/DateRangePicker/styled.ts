@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — DateRangePicker (Styles)
-@FILE     : src/components/DateRangePicker/styled.ts
-@PURPOSE  : Estilos do seletor de intervalo (wrapper, botão, dropdown e selects)
-            com foco em legibilidade e contraste no tema escuro.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
