@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Device Metrics Panel
-@FILE     : src/components/DeviceMetrics/index.tsx
-@PURPOSE  : Exibir métricas de hardware e rede (CPU, memória, disco, uptime e latência)
-            com ícones e layout responsivo.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React from "react";
 import { Container } from "./styled";
