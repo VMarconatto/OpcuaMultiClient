@@ -1,15 +1,4 @@
-/**
-** =======================================================
-@SECTION  : MongoDB — Cluster Panel Box
-@FILE     : src/components/Cluster/index.tsx
-@PURPOSE  : Exibir painel de status do cluster (connections, R/W por segundo,
-            tráfego de rede, tamanho de dados, capacidade e % usada),
-            com polling periódico e gráfico de tendência.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
-/* eslint-disable array-callback-return */
 import React, { useEffect, useMemo, useState } from "react";
 import {
   Container,
