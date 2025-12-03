@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Morgan HTTP Metrics Box
-@FILE     : src/components/MorganMetricsBox/MorganMetricsBox.tsx
-@PURPOSE  : Exibir métricas HTTP coletadas (via Morgan/telemetria) com
-            painel de status, KPIs e minigráfico (RPM x p95), fazendo
-            polling periódico de /http/status e /http/telemetry.
-@LAST_EDIT : 2025-10-27
-** =======================================================
-*/
 
 import React, { useEffect, useMemo, useState } from "react";
 import {
