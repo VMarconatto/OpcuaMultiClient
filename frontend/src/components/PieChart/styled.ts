@@ -1,11 +1,9 @@
 
 import styled from 'styled-components';
 
-
 export interface ILegendProps {
   color: string;
 }
-
 
 export const Container = styled.div`
   width: 49.8%;
