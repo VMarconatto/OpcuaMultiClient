@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — OPC UA Box
-@FILE     : src/components/OPCUABox/index.tsx
-@PURPOSE  : Exibir o estado e as métricas de um cliente OPC UA (sessão,
-            notificações/s, qualidade, latência p95, reconexões) com
-            heurística de status e minigráfico de atividade.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 /* eslint-disable array-callback-return */
 import React, { useEffect, useMemo, useState } from "react";
