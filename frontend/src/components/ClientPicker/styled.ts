@@ -1,13 +1,11 @@
 
 import styled from "styled-components";
 
-
 export const Wrapper = styled.div`
   position: relative;
   display: inline-block;
   overflow: visible; /* garante que nada corte o dropdown */
 `;
-
 
 export const ToggleButton = styled.button`
   background-color: #1e1e1e;
