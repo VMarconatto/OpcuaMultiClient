@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Totalizer Box
-@FILE     : src/components/TotalizerBox/index.tsx
-@PURPOSE  : Exibir valor agregado de uma métrica (produção, dosagem, etc.)
-            com contagem animada, ícone e indicador de unidade.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React from "react";
 import CountUp from "react-countup";
