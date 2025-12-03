@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Content Wrapper
-@FILE     : src/components/Content/index.tsx
-@PURPOSE  : Componente contêiner que envolve children e aplica o estilo
-            de layout/scroll (via styled Container).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React from "react";
 
