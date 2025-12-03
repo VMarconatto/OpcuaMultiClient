@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : OPC UA — Client Setup & Control
-@FILE     : src/pages/OpcuaSetup/index.tsx
-@PURPOSE  : Formulário para configurar o client OPC UA (endpoint, namespace,
-            políticas de segurança, memória mapeada), salvar no backend,
-            alternar (start/stop) a coleta e navegar por nós via Browse.
-@LAST_EDIT : 2025-10-27
-** =======================================================
-*/
 
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
@@ -37,10 +27,6 @@ import {
 import { useDevice } from "../../components/DeviceContext/DeviceContext";
 import { Save, Plus, X, Power } from "lucide-react";
 
-/**
- * Estrutura de configuração do client OPC UA (mantida).
- * - `mapMemory` armazena os NodeIds que serão gravados no MongoDB.
- */
 type OpcuaClientConfig = {
   applicationName: string;
   endpoint: string;
@@ -53,9 +39,6 @@ type OpcuaClientConfig = {
   namespace: number;
 };
 
-/**
- * Referência de itens retornados pelo Browse.
- */
 export type BrowseRef = {
   /** NodeId completo do item (ex.: ns=3;i=1008) */
   nodeId: string;
@@ -67,7 +50,6 @@ export type BrowseRef = {
   nodeClass: string;
 };
 
-/** Campos que devem ser tratados como numéricos no change handler. */
 const numericFields = new Set([
   "initialDelay",
   "maxRetry",
@@ -77,7 +59,6 @@ const numericFields = new Set([
   "namespace",
 ]);
 
-/** Definições opcionais de ambiente (Vite) para a base de API. */
 export interface ImportMetaEnv {
   readonly VITE_API_URL?: string;
 }
@@ -85,12 +66,6 @@ export interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
-/**
- * Instância Axios centralizada.
- * @remarks
- * - Usa `VITE_API_URL` quando disponível; caso contrário, `http://localhost:3000`.
- * - Timeout padrão de 15s.
- */
 export const API = axios.create({
   baseURL:
     (typeof import.meta !== "undefined" &&
@@ -100,10 +75,8 @@ export const API = axios.create({
   timeout: 15000,
 });
 
-/** Variações visuais para o modal de confirmação. */
 type ConfirmVariant = "default" | "danger";
 
-/** Opções para abrir o modal de confirmação. */
 type ConfirmOptions = {
   /** Título do modal */
   title: string;
