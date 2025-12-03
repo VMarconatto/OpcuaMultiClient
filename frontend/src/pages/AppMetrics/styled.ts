@@ -1,14 +1,11 @@
 
 import styled from "styled-components";
 
-/** Paleta neutra usada no gradiente do topo. */
 const italianGreen = "#444445ff";
 const italianWhite = "#444445ff";
 const italianRed = "#444445ff";
 
-/**
- * Container do AppMetrics com vinheta lateral e gradiente neutro.
- */
+
 export const Container = styled.div`
   margin-bottom: 0px;
   padding-bottom: 20px;
@@ -31,7 +28,6 @@ export const Container = styled.div`
   }
 `;
 
-/** Área de conteúdo genérica (mantida para compat). */
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
@@ -44,7 +40,6 @@ export const BoxesRow = styled.div`
   gap: 12px;
   align-items: stretch;
 
-  /* garante 100% de largura por coluna mesmo com width interna fixa */
   & > * {
     width: 100% !important;
   }
