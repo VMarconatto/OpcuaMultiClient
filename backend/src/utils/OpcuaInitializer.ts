@@ -1,11 +1,3 @@
-/**
- =======================================================
-  @SECTION : OPC UA bootstrap
-  @FILE : OpcuaInitializer.ts
-  @PURPOSE : Ler JSON de conexões, registrar no ClientManager, preparar Mongo e iniciar polling
-  @LAST_EDIT : 2025-11-10
-// =======================================================
- */
 
 import { clientManager } from "../OpcuaControllers/ClientManager.js";
 import fs from "fs/promises";
