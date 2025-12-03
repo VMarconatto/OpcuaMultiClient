@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Input (Base)
-@FILE     : src/components/Input/index.tsx
-@PURPOSE  : Componente de campo de entrada base (wrapper de <input>)
-            recebendo todos os atributos HTML nativos via props rest,
-            estilizado via styled-components.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { InputHTMLAttributes } from "react";
 import { Container } from "./styled";
