@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION : Mongo Client Connections Types
-@FILE : connections.ts
-@PURPOSE  : Tipos utilitários para modelar conexões por cliente (MongoDB).
-@LAST_EDIT : 2025-11-10
-** ======================================================= 
-*/
-
 
 import { MongoClient } from "mongodb";
 
