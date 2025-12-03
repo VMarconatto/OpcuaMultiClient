@@ -1,12 +1,4 @@
-/**
-** =======================================================
-@SECTION  : UI — MongoDB Box
-@FILE     : src/components/MongoDBBox/index.tsx
-@PURPOSE  : Exibir métricas resumidas do MongoDB (conexões, latência, uptime e
-            atividade) com status heurístico e minigráfico (ops/min).
-@LAST_EDIT : 2025-10-26
-** =======================================================
-*/
+
 
 /* eslint-disable array-callback-return */
 import React, { useEffect, useMemo, useRef, useState } from "react";
