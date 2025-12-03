@@ -1,6 +1,6 @@
 # 🧠 OPC UA Multi-Client Data Collector
 
-**Backend: Node.js + TypeScript + MongoDB Atlas**  
+**Backend: Node.js + TypeScript + MongoDB**  
 **Frontend: React + TypeScript + Styled Components**
 
 ---
