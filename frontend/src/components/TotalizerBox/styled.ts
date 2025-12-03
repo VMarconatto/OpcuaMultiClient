@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Wallet Box Styles
-@FILE     : src/components/WalletBox/styled.ts
-@PURPOSE  : Estilização do card WalletBox, incluindo gradiente dinâmico,
-            responsividade e efeito de hover com sombra suave.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
