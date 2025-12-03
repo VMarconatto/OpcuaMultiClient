@@ -1,15 +1,10 @@
 
 import styled from "styled-components";
 
-/** Cores temáticas (verde Itália) para realces e foco/seleção. */
 const italianGreen = "#21bd3a";
 /** Brilho suave para sombras (efeito neon leve). */
 const italianGlow = "rgba(46,203,18,.28)";
 
-/**
- * Container geral da página.
- * - Mantém medidas originais (padding/border-radius/margem-top).
- */
 export const Container = styled.div`
   width: 100%;
 
@@ -31,14 +26,12 @@ export const Container = styled.div`
   margin-top: -10px;         /* (mesma medida) */
 `;
 
-/** Wrapper central para o formulário de configuração. */
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
 `;
 
-/** Grade de cards dos clients cadastrados (responsivo via wrap). */
 export const ConnectionList = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -47,11 +40,6 @@ export const ConnectionList = styled.div`
   max-width: 800px;
 `;
 
-/**
- * Card interativo (botão) para cada client.
- * - Usa `selected` para realçar a borda/sombra.
- * - Mantém tamanhos originais (6.5rem).
- */
 export const ConnectionCard = styled.button<{ selected: boolean }>`
   display: flex;
   flex-direction: column;
@@ -83,7 +71,6 @@ export const ConnectionCard = styled.button<{ selected: boolean }>`
   }
 `;
 
-/** Nome do client (texto central com elipse para overflow). */
 export const ConnectionName = styled.div`
   font-size: 0.95rem;
   font-weight: 700;
@@ -95,13 +82,11 @@ export const ConnectionName = styled.div`
   text-overflow: ellipsis;
 `;
 
-/** Ícone do card (muda de cor conforme status `active`). */
 export const ConnectionIcon = styled.div<{ active: boolean }>`
   color: ${({ active }) => (active ? italianGreen : "#666")};
   margin-top: 2px;
 `;
 
-/** Badge textual para status do client (Ativo/Inativo/Checando). */
 export const StatusBadge = styled.span<{ active: boolean }>`
   margin-top: 4px;
   padding: 2px 8px;
@@ -114,7 +99,6 @@ export const StatusBadge = styled.span<{ active: boolean }>`
   color: ${({ active }) => (active ? italianGreen : "#999")};
 `;
 
-/** Título e subtítulo da página (medidas preservadas). */
 export const Title = styled.h2`
   font-size: 1.6rem;
   font-weight: 700;
