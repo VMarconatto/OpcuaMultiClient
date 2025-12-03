@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Application Layout Styles
-@FILE     : src/components/Layout/style.ts
-@PURPOSE  : Definir o grid principal da aplicação, estruturando as áreas
-            de cabeçalho (MH), barra lateral (AS) e conteúdo (CT) de forma responsiva.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
