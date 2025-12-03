@@ -1,11 +1,6 @@
 
 import styled from 'styled-components';
 
-/**
- * `Container` — elemento `<input>` estilizado.
- * @remarks Usa `styled.input`, portanto herda todos os atributos padrão de `<input />`.
- * @note Ajuste dimensões e espaçamentos conforme o design system do projeto.
- */
 export const Container = styled.input`
   display: flex;
   width: 100px;
