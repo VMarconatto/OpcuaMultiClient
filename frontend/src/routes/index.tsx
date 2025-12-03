@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION : React App Bootstrap — Theme & Auth Providers
-@FILE    : index.tsx
-@PURPOSE : Inicializar a aplicação React com provedores de Tema e Autenticação,
-           estilos globais e rotas.
-@LAST_EDIT : 2025-11-10
-** =======================================================
-*/
 
 // RouterConfig — index.tsx (ajustado)
 import React, { useEffect, useState } from "react";
