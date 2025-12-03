@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Application Layout
-@FILE     : src/components/Layout/index.tsx
-@PURPOSE  : Estrutura base da aplicação — organiza cabeçalho principal (MainHeader),
-            barra lateral (Aside) e área de conteúdo (Content) em layout de grid,
-            com suporte a roteamento interno via React Router.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React from "react";
 import { Container } from "./style";
