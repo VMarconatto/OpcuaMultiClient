@@ -1,16 +1,6 @@
-/**
-** =======================================================
-@SECTION  : UI — Message Box Styles
-@FILE     : src/components/MsgBoxProvider/styled.ts
-@PURPOSE  : Estilos do modal (overlay, card, título, texto e botões),
-            incluindo variações (danger/success/warning) e efeitos de glow.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
-/** Paleta auxiliar/efeitos para realce do card (tema Itália). */
 const italianGreen = "#21bd3a";
 const italianRed = "#ff2d2d";
 const italianDark = "#121212";
@@ -20,10 +10,6 @@ const glowGreen = "rgba(46,203,18,.28)";
 const glowRed = "rgba(255,45,45,.28)";
 const glowYellow = "rgba(255,226,111,.28)";
 
-/**
- * Overlay semitransparente com blur leve.
- * @remarks Usa `backdrop-filter` (pode degradar em navegadores antigos).
- */
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
@@ -35,10 +21,6 @@ export const Overlay = styled.div`
   backdrop-filter: blur(2px);
 `;
 
-/**
- * Card central com gradiente e glow condicional por variante.
- * @note As variantes são definidas via atributo `data-variant`.
- */
 export const Card = styled.div`
   position: relative;
   width: min(520px, 92vw);
@@ -79,7 +61,6 @@ export const Card = styled.div`
   }
 `;
 
-/** Botão de fechar (X) posicionado no canto superior direito. */
 export const CloseX = styled.button`
   position: absolute;
   top: 8px;
@@ -98,7 +79,6 @@ export const CloseX = styled.button`
   &:active { transform: translateY(1px); }
 `;
 
-/** Título do modal. */
 export const Title = styled.h3`
   margin: 0 0 8px;
   font-size: 1.2rem;
@@ -106,24 +86,18 @@ export const Title = styled.h3`
   letter-spacing: .2px;
 `;
 
-/** Conteúdo textual/JSX do modal. */
 export const Text = styled.div`
   margin: 0 0 14px;
   font-size: .98rem;
   opacity: .94;
 `;
 
-/** Área dos botões de ação. */
 export const Actions = styled.div`
   display: flex;
   gap: 8px;
   justify-content: flex-end;
 `;
 
-/**
- * Botão primário (Confirmar/OK).
- * @remarks A variante é controlada por `data-variant`.
- */
 export const ConfirmBtn = styled.button`
   padding: 10px 14px;
   border-radius: 12px;
@@ -145,10 +119,6 @@ export const ConfirmBtn = styled.button`
   &:active { transform: translateY(1px); }
 `;
 
-/**
- * Botão secundário (Cancelar/Fechar).
- * @note Mantém contraste no tema escuro e sombra discreta.
- */
 export const CancelBtn = styled.button`
   padding: 10px 14px;
   border-radius: 12px;
