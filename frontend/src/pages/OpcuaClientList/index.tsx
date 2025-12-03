@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : OPC UA — Client List & Status Board
-@FILE     : src/pages/OpcuaClientList/index.tsx
-@PURPOSE  : Listar todos os clients OPC UA configurados, exibir o status
-            de comunicação (ativo/inativo/checando) e permitir a seleção de
-            um client para edição/ativação no formulário ao lado
-@LAST_EDIT : 2025-10-27
-** =======================================================
-*/
 
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
