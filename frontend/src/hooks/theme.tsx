@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : Theme — Context & Provider
-@FILE     : src/hooks/theme.tsx
-@PURPOSE  : Disponibilizar tema atual (dark/light) e ação `toggleTheme`
-            para a aplicação via Context API.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { createContext, useState, useContext, use } from "react";
 
