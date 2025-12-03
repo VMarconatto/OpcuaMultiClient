@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Pie Chart Balance
-@FILE     : src/components/PieChartBalance/index.tsx
-@PURPOSE  : Exibir distribuição percentual de falhas em formato donut,
-            com legenda à esquerda e total central (desvios).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 //** NPM Packages */
 import React from "react";
