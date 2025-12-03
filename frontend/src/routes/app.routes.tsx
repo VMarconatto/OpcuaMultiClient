@@ -1,11 +1,4 @@
-/**
-** =======================================================
-@SECTION : React Router — App Routes (Shell com Providers)
-@FILE : app.routes.tsx
-@PURPOSE : Declarar o shell de rotas autenticadas (Layout + Outlet).
-@LAST_EDIT : 2025-11-10
-** =======================================================
-*/
+
 
 import React from "react";
 import { useParams, Outlet } from "react-router-dom";
