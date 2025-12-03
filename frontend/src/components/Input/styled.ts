@@ -1,11 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Input (Styles)
-@FILE     : src/components/Input/styled.ts
-@PURPOSE  : Estilos base do input utilizando styled-components.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
