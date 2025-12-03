@@ -1,15 +1,4 @@
-/**
-** =======================================================
-@SECTION  : UI — HistoryBox (Trend AreaChart)
-@FILE     : src/components/HistoryBox/index.tsx
-@PURPOSE  : Exibir séries históricas com navegação por índice ou por tempo,
-            incluindo limpeza out-of-range baseada em setup e gradiente
-            dinâmico por série.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { useTheme } from "styled-components";
