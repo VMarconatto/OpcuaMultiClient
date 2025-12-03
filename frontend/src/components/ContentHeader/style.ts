@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Content Header (Styles)
-@FILE     : src/components/ContentHeader/style.ts
-@PURPOSE  : Estilização do cabeçalho de conteúdo (layout responsivo,
-            gradiente “Itália”, vinheta e tipografia) — sem alterar lógica.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 import { IContentHeaderProps } from '.';
