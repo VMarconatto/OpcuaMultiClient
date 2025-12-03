@@ -2,26 +2,21 @@
 ** =======================================================
 @SECTION  : UI — Client Picker (Styles)
 @FILE     : src/components/ClientPicker/styled.ts
-@PURPOSE  : Estilos do seletor de Client (toggle e dropdown com <select>),
-            com foco em contraste e legibilidade em tema escuro.
+@PURPOSE  : Estilos do seletor de Client (toggle e dropdown com <select>).
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
 
 import styled from "styled-components";
 
-/**
- * Wrapper externo do seletor (base p/ click-outside e posicionamento).
- */
+
 export const Wrapper = styled.div`
   position: relative;
   display: inline-block;
   overflow: visible; /* garante que nada corte o dropdown */
 `;
 
-/**
- * Botão que alterna a abertura do dropdown.
- */
+
 export const ToggleButton = styled.button`
   background-color: #1e1e1e;
   color: #ccc;
@@ -39,9 +34,7 @@ export const ToggleButton = styled.button`
   }
 `;
 
-/**
- * Container do dropdown (pop-over posicionado relativo ao Wrapper).
- */
+
 export const Dropdown = styled.div`
   position: absolute;
   top: 110%;
@@ -54,17 +47,12 @@ export const Dropdown = styled.div`
   box-shadow: 0 4px 12px rgba(0,0,0,.6);
 `;
 
-/**
- * Linha de controles dentro do dropdown.
- */
+
 export const SelectRow = styled.div`
   display: flex;
   gap: 1rem;
 `;
 
-/**
- * <select> estilizado do dropdown.
- */
 export const StyledSelect = styled.select`
   padding: 0.5rem;
   background: #121212;
