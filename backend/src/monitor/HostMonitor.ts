@@ -1,11 +1,3 @@
-/**
-** =======================================================
-@SECTION : Host Monitor — Sistema & Rede
-@FILE : HostMonitor.ts
-@PURPOSE : Coletar métricas do host (CPU, memória, disco, rede, processo) em janelas de tempo fixas, expondo snapshot e série temporal.
-@LAST_EDIT : 2025-11-10
-** =======================================================
-*/
 
 import si from "systeminformation";
 import pidusage from "pidusage";
