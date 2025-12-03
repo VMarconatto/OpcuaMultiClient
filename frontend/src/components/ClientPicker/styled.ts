@@ -1,11 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Client Picker (Styles)
-@FILE     : src/components/ClientPicker/styled.ts
-@PURPOSE  : Estilos do seletor de Client (toggle e dropdown com <select>).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
