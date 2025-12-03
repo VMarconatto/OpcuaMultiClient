@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Main Header
-@FILE     : src/components/MainHeader/index.tsx
-@PURPOSE  : Cabeçalho principal da aplicação, exibindo marca, atalhos (alertas,
-            tema) e menu do usuário com animações (Framer Motion) e logout
-            integrado ao contexto de autenticação.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "styled-components";
