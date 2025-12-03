@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : Layout — Aside Navigation
-@FILE     : src/components/Aside/index.tsx
-@PURPOSE  : Renderizar a navegação lateral (logo + grupos de links com
-            dropdowns) para acessar Dashboard, Métricas e telas de Setup.
-            Mantém estado de expansão e item ativo.
-@LAST_EDIT : 2025-03-04
-** =======================================================
-*/
 
 import React, { useState } from "react";
 import { MdDashboard, MdSettingsApplications, MdExpandMore } from "react-icons/md";
