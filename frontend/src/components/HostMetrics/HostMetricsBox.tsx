@@ -1,15 +1,4 @@
-/**
-** =======================================================
-@SECTION  : UI — Host Metrics Box
-@FILE     : src/components/HostMetricsBox/HostMetricsBox.tsx
-@PURPOSE  : Exibir métricas de host (CPU, memória, disco, rede e processo)
-            a partir de snapshot local (override) ou self-fetch com polling,
-            e sintetizar um status global (ok/warn/danger).
-@LAST_EDIT : 2025-10-26
-** =======================================================
-*/
 
-/* eslint-disable array-callback-return */
 import React, { useEffect, useMemo, useState } from "react";
 import {
   Container,
