@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Morgan HTTP Metrics Styles
-@FILE     : src/components/MorganMetricsBox/styled.ts
-@PURPOSE  : Estilos do painel de métricas HTTP (container, layout, KPIs,
-            legenda e área de gráfico) com filete superior por severidade.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
