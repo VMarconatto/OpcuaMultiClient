@@ -1,19 +1,6 @@
-/**
-** =======================================================
-@SECTION  : UI — Client Settings / Status Box (Styles)
-@FILE     : src/components/ClientSettings/styled.ts
-@PURPOSE  : Estilos do card (container, título, imagem, tipografia e
-            responsividade) utilizando tokens do tema.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
-/**
- * Container do card de configurações/status do cliente.
- * 
- */
 export const Container = styled.div`
   width: 49.5%;
   height: 260px;
