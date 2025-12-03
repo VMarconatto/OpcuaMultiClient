@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Content Header
-@FILE     : src/components/ContentHeader/index.tsx
-@PURPOSE  : Renderizar o cabeçalho de conteúdo com título, linha temática
-            (lineColor) e área de controles/ações.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React from "react";
 
