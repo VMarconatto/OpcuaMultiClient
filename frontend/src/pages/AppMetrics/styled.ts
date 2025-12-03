@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : App Metrics — Infra & Telemetry (UI)
-@FILE     : src/pages/AppMetrics/styled.ts
-@PURPOSE  : Estilização do painel de métricas: container com vinheta/gradiente,
-            grid responsivo dos cards (BoxesRow) e span completo (FullSpan).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
@@ -47,10 +38,6 @@ export const Content = styled.div`
   flex-wrap: wrap;
 `;
 
-/**
- * Grid dos cards de métricas (2 colunas → 1 no mobile).
- * - Força cada card a ocupar 100% da coluna do grid.
- */
 export const BoxesRow = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -73,10 +60,6 @@ export const FullSpan = styled.div`
   width: 100%;
 `;
 
-/**
- * Wrapper para selects/pickers caso seja necessário no topo do painel.
- * (Mantido aqui por paridade com outras páginas; opcional.)
- */
 export const SelectWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
