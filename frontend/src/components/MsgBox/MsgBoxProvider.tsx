@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — Message Box Provider
-@FILE     : src/components/MsgBoxProvider/MsgBoxProvider.tsx
-@PURPOSE  : Fornecer contexto global para modais de mensagem (alert/confirm),
-            com fila, animações (Framer Motion), suporte a ESC/ENTER e
-            auto-close. Renderiza via portal no <body>.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
