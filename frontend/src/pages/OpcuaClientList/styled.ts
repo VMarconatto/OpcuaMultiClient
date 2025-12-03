@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : OPC UA — Client List & Status Board (UI)
-@FILE     : src/pages/OpcuaClientList/styled.ts
-@PURPOSE  : Estilização (styled-components) para a listagem de clients OPC UA:
-            container, wrapper do formulário, grade de cards, ícones e badges
-            de status
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
