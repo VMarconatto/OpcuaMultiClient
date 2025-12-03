@@ -1,22 +1,12 @@
 
 import styled from "styled-components";
 
-/**
- * Props de legenda (cor indicativa).
- * @property color Cor do marcador/rótulo do item na UI.
- */
 export interface ILegendProps {
   color: string;
 }
 
-/** Severidade do painel (controla filete/cores). */
 type StatusLevel = "ok" | "warn" | "danger" | "unknown";
 
-/**
- * Container principal do box OPC UA.
- * @property $status Nível de severidade usado no filete superior.
- * @remarks Fundo em gradiente neutro; borda leve para destaque no tema escuro.
- */
 export const Container = styled.div<{ $status: StatusLevel }>`
   width: 49.8%;
   height: 300px;
@@ -103,10 +93,6 @@ export const Title = styled.h2`
   margin: 0;
 `;
 
-/**
- * Indicador (pill) de status do painel.
- * @property $status Controla cores do gradiente de fundo.
- */
 export const Pill = styled.span<{ $status: StatusLevel }>`
   display: inline-flex;
   align-items: center;
@@ -135,36 +121,28 @@ export const Pill = styled.span<{ $status: StatusLevel }>`
   }};
 `;
 
-/** Grade de KPIs (2 colunas). */
 export const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px 12px;
 `;
 
-/** Cartão de KPI. */
 export const Stat = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
 `;
 
-/** Rótulo do KPI. */
 export const Label = styled.span`
   font-size: 0.75rem;
   opacity: 0.85;
 `;
 
-/** Valor do KPI. */
 export const Value = styled.span`
   font-size: 1.1rem;
   font-weight: 700;
 `;
 
-/**
- * Lista de indicadores com rolagem.
- * @note Aplica destaque quando desconectado (`.disconnected`).
- */
 export const LegendContainer = styled.ul`
   list-style: none;
   max-height: 120px;
@@ -180,7 +158,6 @@ export const LegendContainer = styled.ul`
   }
 `;
 
-/** Item de legenda (ícone + valor + nome). */
 export const Legend = styled.li<ILegendProps>`
   display: flex;
   align-items: center;
@@ -194,7 +171,6 @@ export const Legend = styled.li<ILegendProps>`
   }
 `;
 
-/** Wrapper do minigráfico de barras. */
 export const ChartWrap = styled.div`
   width: 100%;
   height: 100%;
