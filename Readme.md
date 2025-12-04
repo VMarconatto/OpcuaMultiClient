@@ -78,7 +78,7 @@ frontend/
 └── public/
     └── favicon.ico
 ```
-🧠 Tecnologias Principais
+🧠 Tecnologias Principais:
 Backend
 Tecnologia	Uso
 Node.js / TypeScript	Core da aplicação OPC UA
