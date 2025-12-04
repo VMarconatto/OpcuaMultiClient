@@ -1,27 +1,13 @@
-/**
-** =======================================================
-@SECTION  : MongoDB — Cluster Panel Box (Styles)
-@FILE     : src/components/Cluster/styled.ts
-@PURPOSE  : Estilos do card (layout em dois lados, pílula de status,
-            legenda de indicadores e gráfico de Data Size).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
-/** Cor para itens da legenda. */
+
 export interface ILegendProps {
   color: string;
 }
 
-/** Nível heurístico de status propagado aos estilos. */
 type StatusLevel = "ok" | "warn" | "danger" | "unknown";
 
-/**
- * Container principal do card.
- * @param $status Nível de status para variar acentos (top border/pill).
- */
 export const Container = styled.div<{ $status: StatusLevel }>`
   width: 49.8%;
   height: 300px;
@@ -36,7 +22,6 @@ export const Container = styled.div<{ $status: StatusLevel }>`
   border: 1px solid rgba(255,255,255,0.06);
   position: relative;
 
-  /* filete superior tema Itália (varia por $status) */
   &::before {
     content: "";
     position: absolute;
@@ -65,7 +50,6 @@ export const Container = styled.div<{ $status: StatusLevel }>`
   }
 `;
 
-/* Lado esquerdo: título, stats e legenda */
 export const SideLeft = styled.aside`
   flex: 1.2;
   padding: 14px 16px 12px 16px;
@@ -78,7 +62,6 @@ export const SideLeft = styled.aside`
   }
 `;
 
-/* Lado direito: wrapper do gráfico */
 export const SideRight = styled.div`
   flex: 0.8;
   display: flex;
@@ -100,10 +83,6 @@ export const Title = styled.h2`
   margin: 0;
 `;
 
-/**
- * Pílula de status (cor varia por $status).
- * @param $status Nível "ok" | "warn" | "danger" | "unknown".
- */
 export const Pill = styled.span<{ $status: StatusLevel }>`
   display: inline-flex;
   align-items: center;
@@ -188,7 +167,6 @@ export const ChartWrap = styled.div`
   position: relative; /* necessário para posicionar o badge */
 `;
 
-/** Badge com o % usado do plano (canto superior direito do gráfico). */
 export const PctBadge = styled.span`
   position: absolute;
   top: 6px;
