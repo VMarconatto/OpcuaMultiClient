@@ -3,8 +3,7 @@
 @SECTION  : UI — Client Picker (OPC UA)
 @FILE     : src/components/ClientPicker/index.tsx
 @PURPOSE  : Componente de seleção de Client (ex.: "Client01") obtido do backend.
-            Abre dropdown, carrega lista via HTTP e notifica o pai por onChange —
-            sem alterar lógica.
+            Abre dropdown, carrega lista via HTTP e notifica o pai por onChange.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
