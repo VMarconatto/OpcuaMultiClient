@@ -79,8 +79,7 @@ frontend/
     └── favicon.ico
 ```
 🧠 Tecnologias Principais:
-Backend
-Tecnologia	Uso
+Backend:
 Node.js / TypeScript	Core da aplicação OPC UA
 node-opcua	Implementação do cliente OPC UA
 Express.js	API REST entre backend ↔ frontend
@@ -89,8 +88,7 @@ Nodemailer / WhatsApp API	Alertas automáticos
 Winston / Morgan	Logging e auditoria
 dotenv	Configuração por ambiente
 
-Frontend
-Tecnologia	Uso
+Frontend:
 React + TypeScript	Framework principal da UI
 styled-components	CSS-in-JS e temas dinâmicos
 Framer Motion	Animações de interface
