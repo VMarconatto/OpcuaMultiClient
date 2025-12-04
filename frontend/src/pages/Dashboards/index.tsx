@@ -101,7 +101,7 @@ const Dashboard: React.FC<
   );
 
   /**
-   * Lista de dias iniciais (mesmo array de `endDay`, reaproveitado).
+   * Lista de dias iniciais
    * @returns {{value:string,label:string}[]} Opções para o Select de dias.
    */
   const firstDay = useMemo(() => endDay, [endDay]);
