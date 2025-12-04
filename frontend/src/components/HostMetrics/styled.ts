@@ -1,31 +1,14 @@
-/**
-** =======================================================
-@SECTION  : UI — Host Metrics Box (Styles)
-@FILE     : src/components/HostMetricsBox/styled.ts
-@PURPOSE  : Estilização do HostMetricsBox (layout, paleta temática e badges),
-            incluindo filete superior que reflete o status agregado.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 // styled.ts
 import styled from "styled-components";
 
-/** Propriedades de legenda (cor do marcador/valor). */
 export interface ILegendProps {
   color: string;
 }
 
-/** Níveis de severidade suportados visualmente. */
 export type StatusLevel = "ok" | "warn" | "danger" | "unknown";
 
-/**
- * Contêiner principal do HostMetricsBox.
- *
- * @remarks
- * - O filete superior (`::before`) muda de cor conforme `$status`.
- * - Layout dividido em dois lados: métricas/legenda (esquerda) e barras (direita).
- */
+
 export const Container = styled.div<{ $status: StatusLevel }>`
   width: 49.8%;
   height: 300px;
@@ -65,7 +48,7 @@ export const Container = styled.div<{ $status: StatusLevel }>`
   }
 `;
 
-/** Lado esquerdo: título, stats e legenda. */
+
 export const SideLeft = styled.aside`
   flex: 1.2;
   padding: 14px 16px 12px 16px;
@@ -76,7 +59,7 @@ export const SideLeft = styled.aside`
   img { display: block; }
 `;
 
-/** Lado direito: barras/mini-gráficos. */
+
 export const SideRight = styled.div`
   flex: 0.8;
   display: flex;
@@ -86,24 +69,20 @@ export const SideRight = styled.div`
   overflow: hidden;
 `;
 
-/** Linha do título com o status (pill) à direita. */
+
 export const TitleRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-/** Título do box. */
+
 export const Title = styled.h2`
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
 `;
 
-/**
- * Indicador do status agregado do box.
- * @param $status - Nível de severidade para theme mapping.
- */
 export const Pill = styled.span<{ $status: StatusLevel }>`
   display: inline-flex;
   align-items: center;
@@ -128,36 +107,28 @@ export const Pill = styled.span<{ $status: StatusLevel }>`
   }};
 `;
 
-/** Grid de KPIs (CPU total, núcleos, memória, etc.). */
 export const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px 12px;
 `;
 
-/** Bloco de KPI (label + valor). */
 export const Stat = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
 `;
 
-/** Rótulo do KPI. */
 export const Label = styled.span`
   font-size: 0.75rem;
   opacity: 0.85;
 `;
 
-/** Valor do KPI. */
 export const Value = styled.span`
   font-size: 1.1rem;
   font-weight: 700;
 `;
 
-/**
- * Lista de itens de legenda (scrollável).
- * @note A classe `.disconnected` permanece para estados especiais de conexão.
- */
 export const LegendContainer = styled.ul`
   list-style: none;
   max-height: 120px;
@@ -173,7 +144,6 @@ export const LegendContainer = styled.ul`
   }
 `;
 
-/** Item de legenda com marcador de cor e rótulo. */
 export const Legend = styled.li<ILegendProps>`
   display: flex;
   align-items: center;
@@ -185,14 +155,12 @@ export const Legend = styled.li<ILegendProps>`
   > span { margin-left: 2px; }
 `;
 
-/** Wrapper da área de barras/mini-gráficos. */
 export const ChartWrap = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
 `;
 
-/** Badge de percentual sobreposto (quando necessário). */
 export const PctBadge = styled.span`
   position: absolute;
   top: 6px;
@@ -207,7 +175,6 @@ export const PctBadge = styled.span`
   pointer-events: none;
 `;
 
-/** Barra base (CPU/Mem). */
 export const Bar = styled.div`
   width: 100%;
   height: 20px;
@@ -218,11 +185,6 @@ export const Bar = styled.div`
   position: relative;
 `;
 
-/**
- * Preenchimento proporcional da barra (CPU/Mem).
- * @param pct - Percentual clamped 0..100
- * @param color - Cor conforme severidade
- */
 export const BarFill = styled.div<{ pct: number; color: string }>`
   height: 100%;
   width: ${({ pct }) => Math.max(0, Math.min(100, pct))}%;
