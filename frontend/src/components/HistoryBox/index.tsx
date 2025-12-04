@@ -217,7 +217,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
       .catch((err) => console.error("Erro ao carregar setupConfig:", err));
   }, [resolvedDeviceId, externalColorsMap]);
 
-  /** Chaves válidas (presentes no setup e numéricas em pelo menos um ponto). */
+  /** Chaves válidas  */
   const validKeys = useMemo(() => {
     const keysFromSetup = Object.keys(setupConfig);
     return keysFromSetup.filter((key) =>
@@ -359,7 +359,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
     currentRange?.to,
   ]);
 
-  /** Range efetivo (controlado ou interno). */
+  /** Range efetivo . */
   const time_from = currentRange?.from ?? internalRange?.from;
   const time_to = currentRange?.to ?? internalRange?.to;
 
@@ -521,7 +521,6 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
               }}
             />
 
-            {/* Áreas: linha sempre visível; fill só com 1 série visível */}
             {validKeys.map((key) => {
               const hidden = hiddenKeys.includes(key);
               const color = activeColorsMap[key];
@@ -545,7 +544,6 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
               );
             })}
 
-            {/* Setas de navegação DENTRO do SVG — último filho do AreaChart */}
             <Customized
               component={
                 <ChartNav
