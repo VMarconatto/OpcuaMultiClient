@@ -38,7 +38,7 @@ import { useDevice } from "../../components/DeviceContext/DeviceContext";
 import { Save, Plus, X, Power } from "lucide-react";
 
 /**
- * Estrutura de configuração do client OPC UA (mantida).
+ * Estrutura de configuração do client OPC UA.
  * - `mapMemory` armazena os NodeIds que serão gravados no MongoDB.
  */
 type OpcuaClientConfig = {
