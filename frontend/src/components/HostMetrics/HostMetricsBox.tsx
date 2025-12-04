@@ -42,7 +42,7 @@ type StatusLevel = "ok" | "warn" | "danger" | "unknown";
  *
  * @remarks
  * Este payload é consolidado (CPU/memória/disco/rede/processo/sistema) para
- * renderização rápida; números podem vir como frações (ex.: usedPct ∈ [0..1]).
+ * renderização rápida; 
  */
 type HostSnapshot = {
   timestamp: string;
@@ -74,7 +74,7 @@ export interface IHostMetricsBoxProps {
   title: string;
   icon?: string;
   basePath?: string;
-  /** Snapshot vindo do pai (AppMetrics). Se ausente, o componente faz self-fetch. */
+
   statusOverride?: Partial<HostSnapshot> | { snapshot?: Partial<HostSnapshot> } | null;
 }
 
@@ -149,7 +149,7 @@ const HostMetricsBox: React.FC<IHostMetricsBoxProps> = ({
     }
   }, [statusOverride, normalizeOverride]);
 
-  // --------- Self-fetch SÓ se não houver override suficiente ---------
+  // --------- Self-fetch se não houver override suficiente ---------
   useEffect(() => {
     if (statusOverride && Object.keys(normalizeOverride(statusOverride)).length > 0) return;
 
