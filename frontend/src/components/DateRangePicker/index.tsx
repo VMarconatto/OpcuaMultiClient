@@ -224,7 +224,6 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
               ))}
             </StyledSelect>
 
-            {/* >>> NOVO: horas */}
             <StyledSelect
               value={String(firstHourSelected)}
               onChange={(e) => handleFirstHour(Number(e.target.value))}
