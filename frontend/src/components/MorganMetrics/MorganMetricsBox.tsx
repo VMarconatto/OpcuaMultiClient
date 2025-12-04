@@ -207,7 +207,7 @@ const MorganMetricsBox: React.FC<IMorganMetricsBoxProps> = ({
         const js = JSON.parse(text);
         if (mounted) setTelem(js as HttpTelemetry);
       } catch {
-        // silencioso; snapshot já exibe aviso se houver problema geral
+
       } finally {
         if (mounted) timer = setTimeout(run, POLL_MS_TELEM);
       }
@@ -398,7 +398,6 @@ export default MorganMetricsBox;
 /**
  * Pill (badge de status) — definido aqui para manter compatibilidade visual
  * com outros boxes (ex.: HostMetrics), sem alterar a exportação local.
- * @remarks Caso prefira consolidar, você já possui uma definição semelhante em styled.ts.
  */
 export const Pill = styled.span<{ $status: StatusLevel }>`
   display: inline-flex;
