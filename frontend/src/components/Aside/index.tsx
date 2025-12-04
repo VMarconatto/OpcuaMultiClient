@@ -78,7 +78,7 @@ const Aside: React.FC = () => {
     <Container isActive={true}>
       <Header>
         <LogImg src={Sorgente} />
-        {/* <Title>Sorgente | TCS Industrial</Title> */}
+        {/* <Title>Sorgente</Title> */}
       </Header>
 
       <MenuContainer>
