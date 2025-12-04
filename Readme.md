@@ -4,6 +4,8 @@
 **Frontend: React + TypeScript + Styled Components**
 
 ---
+## Observação
+Optei por comentar todo o programa com JSDOC em Português
 
 ## 📘 Visão Geral
 
