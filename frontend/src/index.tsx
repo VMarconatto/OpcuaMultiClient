@@ -30,7 +30,7 @@ const root = ReactDOM.createRoot(
  * 1. Lê o tema atual via `useTheme()`.
  * 2. Injeta `StyledThemeProvider` (styled-components) com o tema ativo.
  * 3. Encapsula `AuthProvider` para contexto de autenticação.
- * 4. Renderiza `GlobalStyles` e o `RouterConfig` (rotas da aplicação).
+ * 4. Renderiza `GlobalStyles` e o `RouterConfig`
  */
 const App: React.FC = () => {
   const { theme } = useTheme();
