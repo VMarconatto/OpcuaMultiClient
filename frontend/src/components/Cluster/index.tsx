@@ -233,7 +233,7 @@ const ClusterPanelBox: React.FC<ClusterPanelBoxProps> = ({
 
     return () => {
       clearInterval(id);
-      controller.abort(); // aborta só no unmount/troca de deps
+      controller.abort(); 
     };
   }, [deviceId, pollingMs, apiBase, planMaxMB, planMaxBytes]);
 
@@ -257,7 +257,7 @@ const ClusterPanelBox: React.FC<ClusterPanelBoxProps> = ({
   }, [panel]);
 
   /**
-   * Indicadores exibidos na legenda (lado esquerdo).
+   * Indicadores exibidos na legenda.
    * @returns {Array<{name:string, amount:number, color:string, icon: any, fmt:() => string}>}
    */
   const indicators = useMemo(() => {
@@ -323,8 +323,8 @@ const ClusterPanelBox: React.FC<ClusterPanelBoxProps> = ({
   );
 
   /**
-   * Percentual atual usado do plano (exibe badge no gráfico).
-   * @returns {number | null} Percentual com uma casa decimal (ou nulo).
+   * Percentual atual usado do plano.
+   * @returns {number | null} Percentual com uma casa decimal.
    */
   const currentPct = useMemo(() => {
     const last = dsHistory[dsHistory.length - 1];
@@ -408,7 +408,6 @@ const ClusterPanelBox: React.FC<ClusterPanelBoxProps> = ({
             </Value>
           </Stat>
 
-          {/* Capacidade Máxima (abaixo de Data Size, coluna da direita) */}
           <Stat style={{ gridColumn: 2 }}>
             <Label>Maximum Capacity</Label>
             <Value>
@@ -470,7 +469,6 @@ const ClusterPanelBox: React.FC<ClusterPanelBoxProps> = ({
                 }
                 labelFormatter={() => ""}
               />
-              {/* área principal em MB; base ancorada em 0 */}
               <Area type="monotone" dataKey="mb" baseValue={0} strokeWidth={2} fillOpacity={0.2} />
             </AreaChart>
           </ResponsiveContainer>
