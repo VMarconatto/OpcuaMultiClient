@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : Dashboard — Analytics & History (UI)
-@FILE     : src/pages/Dashboard/styled.ts
-@PURPOSE  : Estilização da página de Dashboard (container principal,
-            grid de conteúdo e wrapper dos selects de filtro).
-@LAST_EDIT: 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
