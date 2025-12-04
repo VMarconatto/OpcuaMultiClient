@@ -1,19 +1,6 @@
-/**
-** =======================================================
-@SECTION  : UI — Device Metrics Panel (Styles)
-@FILE     : src/components/DeviceMetrics/styled.ts
-@PURPOSE  : Estilização do painel de métricas do dispositivo, abrangendo layout,
-            responsividade e aparência de ícones e textos.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
-/**
- * Wrapper genérico para alinhamento horizontal de múltiplos painéis.
- * @info Usado quando o dashboard exibe vários DeviceMetrics lado a lado.
- */
 export const Content = styled.div`
   flex: 1;
   display: flex;
@@ -23,18 +10,6 @@ export const Content = styled.div`
 
 Content.displayName = "Content"; // útil para debug e React DevTools
 
-/**
- * Contêiner principal do painel de métricas.
- *
- * @remarks
- * - Exibe o título e as métricas principais do dispositivo.
- * - Responsivo para telas de 770px e 420px.
- * - Cores derivadas do tema ativo (`theme.wallet` e `theme.textPrimary`).
- *
- * @note
- * Os ícones SVG dentro de `<main>` herdam a cor do texto, mantendo contraste
- * em temas claros e escuros.
- */
 export const Container = styled.div`
   width: 49.5%;
   height: 315px;
