@@ -1,40 +1,19 @@
-/**
-** =======================================================
-@SECTION  : UI — Main Header Styles
-@FILE     : src/components/MainHeader/styled.ts
-@PURPOSE  : Estilos do cabeçalho principal, incluindo layout, efeitos de fundo,
-            responsividade, menu do usuário e marcação visual (badge).
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
+
 
 import styled from 'styled-components';
 
-/** Paleta do efeito "Itália" do header. */
+
 const italianGreen = "#090808ff";
 const italianWhite = "rgba(5, 0, 0, 0.35)";
 const italianRed = "#454444ff";
 
-/** Constantes visuais do header. */
 const HEADER_PAD_X = 20;      // seu padding: 0 20px
 const SEP_THICKNESS = 2;
 
-/**
- * Props do container do header.
- * @property isActive Reserva para estados visuais/condicionais (futuro).
- */
 interface ContainerProps {
   isActive: boolean;
 }
 
-/**
- * Container do Main Header.
- * @remarks
- * - Define `grid-area: MH` para integrar ao layout principal.
- * - Aplica gradientes combinados (vinheta + “Itália”) e filete inferior decorativo.
- * - Mantém altura fixa e evita overflow vertical.
- * @note Em telas pequenas, a ocultação/ajuste de outros elementos é feita em seus próprios componentes.
- */
 export const Container = styled.div<ContainerProps>`
   position: relative;
   grid-area: MH;
@@ -45,8 +24,7 @@ export const Container = styled.div<ContainerProps>`
 
   height: 70px;
   padding: 0 20px;
-
-  /* Efeito Itália (mesmas cores do Signin) + contraste proporcional ao header */
+  
   background:
     /* vinheta/contraste — focalizada à direita (onde ficam os ícones) */
     radial-gradient(10% 220% at 78% 50%,
@@ -57,7 +35,6 @@ export const Container = styled.div<ContainerProps>`
     linear-gradient(135deg, ${italianGreen},${italianWhite},${italianRed});
   background-blend-mode: overlay, normal;
 
-  /* sombra neutra (evita criar barra de rolagem) */
   box-shadow: 0 8px 25px rgba(0,0,0,0.45);
   overflow: hidden;
   min-height: 0;
@@ -66,8 +43,7 @@ export const Container = styled.div<ContainerProps>`
   color:white;
   font-size:30px;
 }
-  /* filete inferior em degradê (opcional). Remova se não quiser. */
-  // dentro de Container
+
 &::after {
   content: "";
   position: absolute;
@@ -84,17 +60,13 @@ export const Container = styled.div<ContainerProps>`
 
 `;
 
-/** Grupo de ícones do lado direito (notificações, tema, avatar). */
+
 export const IconsGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
 `;
 
-/**
- * Botão para ícones (badge, avatar como <img>, etc.).
- * @note Recebe `as={Link}` quando necessário, mantendo estilo de botão.
- */
 export const IconButton = styled.button`
   position: relative;
   background: none;
@@ -115,7 +87,6 @@ export const IconButton = styled.button`
   &:hover { opacity: 0.8; }
 `;
 
-/** Indicador numérico/flutuante (ex.: total de alertas). */
 export const Badge = styled.span`
   position: absolute;
   top: -5px;
@@ -128,12 +99,10 @@ export const Badge = styled.span`
   font-weight: bold;
 `;
 
-/** Wrapper posicionado do avatar — ancora o menu suspenso. */
 export const AvatarWrapper = styled.div`
   position: relative;
 `;
 
-/** Avatar do usuário. */
 export const Avatar = styled.img`
   width: 36px;
   height: 40px;
@@ -145,7 +114,6 @@ export const Avatar = styled.img`
   &:hover { box-shadow: 0 0 0 3px ${({ theme }) => theme.accent2}; }
 `;
 
-/** Menu suspenso do usuário. */
 export const UserMenu = styled.ul`
   position: absolute;
   top: 48px;
@@ -161,7 +129,6 @@ export const UserMenu = styled.ul`
   list-style: none;
 `;
 
-/** Item do menu do usuário (link ou ação). */
 export const UserMenuItem = styled.li`
   padding: 10px 20px;
   color: ${({ theme }) => theme.textPrimary};
@@ -175,10 +142,8 @@ export const UserMenuItem = styled.li`
   &:hover { background-color: ${({ theme }) => theme.accent}; }
 `;
 
-/* Mantive sua marca com degradê bicolor — sem mudanças */
 export const IconsBrand = styled.span``;
 
-/** Título textual da marca (ajustes responsivos aplicados). */
 export const Title = styled.h3`
   color: ${props => props.theme.textPrimary};
   margin-left: -1920px;
@@ -190,7 +155,6 @@ export const Title = styled.h3`
   }
 `;
 
-/** Logo/imagem da marca (posicionamento original preservado). */
 export const LogImg = styled.img`
   height: 30px;
   width: 30px;
