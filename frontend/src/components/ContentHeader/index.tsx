@@ -21,13 +21,9 @@ import { Container, Controllers, TitleContainer } from "./style";
  * - `children` complementa `controllers` quando há conteúdo extra.
  */
 export interface IContentHeaderProps {
-  /** Título a ser exibido no cabeçalho. */
   title?: string;
-  /** Cor temática associada ao título/linha de destaque. */
   lineColor?: string;
-  /** Área de controles (botões, selects, filtros). */
   controllers?: React.ReactNode;
-  /** Conteúdo adicional a ser exibido junto aos `controllers`. */
   children?: React.ReactNode;
 }
 
