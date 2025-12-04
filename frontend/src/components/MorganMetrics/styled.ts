@@ -1,23 +1,8 @@
-/**
-** =======================================================
-@SECTION  : UI — Morgan HTTP Metrics Styles
-@FILE     : src/components/MorganMetricsBox/styled.ts
-@PURPOSE  : Estilos do painel de métricas HTTP (container, layout, KPIs,
-            legenda e área de gráfico) com filete superior por severidade.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
-/** Severidade de status suportada pelo painel. */
 export type StatusLevel = "ok" | "warn" | "danger" | "unknown";
 
-/**
- * Pill — badge/indicador visual de status (ok/warn/danger/unknown).
- * @property $status Controla a paleta do gradiente de fundo.
- * @note Mantém compatibilidade com demais boxes (Host/Mongo/etc.).
- */
 export const Pill = styled.span<{ $status: StatusLevel }>`
   display: inline-flex;
   align-items: center;
@@ -42,11 +27,6 @@ export const Pill = styled.span<{ $status: StatusLevel }>`
   }};
 `;
 
-/**
- * Container principal do box de métricas HTTP.
- * @property $status Define o filete superior (cor) por severidade.
- * @remarks Usa gradiente neutro de fundo e borda leve para destacar no tema escuro.
- */
 export const Container = styled.div<{ $status: StatusLevel }>`
   width: 100%;
   height: 450px;
@@ -82,7 +62,6 @@ export const Container = styled.div<{ $status: StatusLevel }>`
   }
 `;
 
-/** Coluna esquerda — título, KPIs e legenda. */
 export const SideLeft = styled.aside`
   flex: 1.2;
   padding: 14px 16px 12px 16px;
@@ -93,7 +72,6 @@ export const SideLeft = styled.aside`
   img { display: block; }
 `;
 
-/** Coluna direita — área do minigráfico. */
 export const SideRight = styled.div`
   flex: 0.8;
   display: flex;
@@ -103,50 +81,40 @@ export const SideRight = styled.div`
   overflow: hidden;
 `;
 
-/** Linha do título com pill de status. */
 export const TitleRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
-/** Título do box. */
 export const Title = styled.h2`
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
 `;
 
-/** Grade de KPIs (2 colunas). */
 export const StatGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px 12px;
 `;
 
-/** Cartão de KPI. */
 export const Stat = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2px;
 `;
 
-/** Rótulo do KPI. */
 export const Label = styled.span`
   font-size: 0.75rem;
   opacity: 0.85;
 `;
 
-/** Valor do KPI. */
 export const Value = styled.span`
   font-size: 1.1rem;
   font-weight: 700;
 `;
 
-/**
- * Lista de itens de legenda (sem scroll para priorizar leitura rápida).
- * @note Se futuramente houver overflow, considere limitar altura e ativar rolagem.
- */
 export const LegendContainer = styled.ul`
   list-style: none;
   padding-left: 6px;
@@ -161,7 +129,6 @@ export const LegendContainer = styled.ul`
   &::-webkit-scrollbar { display: none; } /* WebKit */
 `;
 
-/** Item da legenda: marcador colorido + valor + rótulo. */
 export const Legend = styled.li<{ color: string }>`
   display: flex;
   align-items: center;
@@ -173,7 +140,6 @@ export const Legend = styled.li<{ color: string }>`
   > span { margin-left: 2px; }
 `;
 
-/** Wrapper da área gráfica. */
 export const ChartWrap = styled.div`
   width: 100%;
   height: 100%;
