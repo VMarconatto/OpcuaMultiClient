@@ -1,3 +1,14 @@
+/**
+** =======================================================
+@SECTION  : Dashboard — Analytics & History
+@FILE     : src/pages/Dashboard/index.tsx
+@PURPOSE  : Exibir métricas de produção, alarmes fora de faixa, gráficos e
+            histórico de variáveis OPC UA para o client ativo.
+            Integra os componentes WalletBox, PieChartBalance e HistoryBox,
+            consumindo dados via API do backend multi-client.
+@LAST_EDIT : 2025-11-11
+** =======================================================
+*/
 
 import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
@@ -16,8 +27,6 @@ import ClientPicker from "../../components/ClientPicker";
 import { useDevice } from "../../components/DeviceContext/DeviceContext";
 
 // ** Interfaces e Tipos auxiliares **
-import { SelectWrapper } from "../../components/Olds/SelectInput/style";
-import { ISelectInputProps } from "../../components/Olds/SelectInput/index";
 import { IContentHeaderProps } from "../../components/ContentHeader/index";
 import { IPieChartProps } from "../../components/PieChart";
 
@@ -41,7 +50,7 @@ import listdays from "../../utils/days";
  * @returns {JSX.Element} Tela de dashboard com cards, gráfico de pizza e histórico.
  */
 const Dashboard: React.FC<
-  ISelectInputProps & IContentHeaderProps & IPieChartProps
+  IContentHeaderProps & IPieChartProps
 > = ({ children, controllers }) => {
   /** Contexto global: client ativo */
   const { deviceId, setDeviceId } = useDevice();
