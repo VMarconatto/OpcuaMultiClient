@@ -1,15 +1,10 @@
 
 import styled from "styled-components";
 
-/** Paleta neutra (tons de cinza usados no fundo). */
 const italianGreen = "#444445ff";
 const italianWhite = "#444445ff";
 const italianRed = "#444445ff";
 
-/**
- * Container principal do Dashboard.
- * - Aplica vinheta e gradiente base.
- */
 export const Container = styled.div`
   margin-bottom: 0px;
   padding-bottom: 20px;
@@ -27,20 +22,12 @@ export const Container = styled.div`
   background-blend-mode: overlay, normal;
 `;
 
-/**
- * Área de conteúdo do Dashboard (WalletBoxes, gráficos, histórico).
- * - Layout flexível com quebra automática em telas menores.
- */
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 `;
 
-/**
- * Wrapper para selects e pickers (ClientPicker, DateRangePicker).
- * - Organiza controles no cabeçalho com espaçamento responsivo.
- */
 export const SelectWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
