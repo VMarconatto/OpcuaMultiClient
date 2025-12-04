@@ -4,7 +4,6 @@
 @FILE     : src/components/Button/index.tsx
 @PURPOSE  : Componente de botão genérico com suporte a todos os atributos
             nativos de <button>, mantendo estilização via styled-components.
-            Lógica/JSX preservados — apenas documentação JSDoc.
 @LAST_EDIT : 2025-11-11
 ** =======================================================
 */
