@@ -1,14 +1,3 @@
-/**
-** =======================================================
-@SECTION  : Dashboard — Analytics & History
-@FILE     : src/pages/Dashboard/index.tsx
-@PURPOSE  : Exibir métricas de produção, alarmes fora de faixa, gráficos e
-            histórico de variáveis OPC UA para o client ativo.
-            Integra os componentes WalletBox, PieChartBalance e HistoryBox,
-            consumindo dados via API do backend multi-client.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
