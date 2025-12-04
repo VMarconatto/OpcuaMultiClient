@@ -5,7 +5,7 @@
 
 ---
 ## Observação
-Optei por comentar todo o programa com JSDOC em Português
+Optei por comentar todo o programa com JSDOC em Português. Para acesso ao repositório completo, consulte as condições descritas na licença.
 
 ## 📘 Visão Geral
 
