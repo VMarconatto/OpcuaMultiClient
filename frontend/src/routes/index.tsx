@@ -55,7 +55,7 @@ const PageHeaderBar = styled.div`
 
 /**
  * Rota protegida simples que verifica a sessão do usuário em `/auth/me`.
- * - Enquanto carrega (`allowed === null`), não renderiza nada (pode trocar por spinner)
+ * - Enquanto carrega (`allowed === null`), não renderiza nada
  * - Se não autorizado, redireciona para `/signin`
  */
 const ProtectedRoute: React.FC = () => {
@@ -78,14 +78,14 @@ const ProtectedRoute: React.FC = () => {
     };
   }, []);
 
-  if (allowed === null) return null; // pode trocar por um spinner leve
+  if (allowed === null) return null; 
   return allowed ? <Outlet /> : <Navigate to="/signin" replace />;
 };
 
 /**
  * Wrapper da página "Analog Setup"
  * - Posiciona o `ClientPicker` no cabeçalho fixo
- * - Renderiza o `RangeSetupForm` abaixo (área com scroll próprio)
+ * - Renderiza o `RangeSetupForm` abaixo
  */
 const AnalogSetupPage: React.FC = () => {
   const { deviceId, setDeviceId } = useDevice();
@@ -123,11 +123,9 @@ const RouterConfig: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* sempre começar no /signin */}
         <Route path="/" element={<Navigate to="/signin" replace />} />
         <Route path="/signin" element={<Signin />} />
 
-        {/* tudo abaixo é protegido */}
         <Route element={<ProtectedRoute />}>
           <Route
             path="/"
