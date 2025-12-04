@@ -1,7 +1,5 @@
 
-
 import styled from 'styled-components';
-
 
 const italianGreen = "#090808ff";
 const italianWhite = "rgba(5, 0, 0, 0.35)";
