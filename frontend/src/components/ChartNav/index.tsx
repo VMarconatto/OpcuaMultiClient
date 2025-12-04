@@ -39,7 +39,7 @@ const ChartNav: React.FC<{
   const H = p.chartHeight ?? p.height ?? p.viewBox?.height ?? 0;
   const M = p.offset ?? p.margin ?? { top: 0, right: 0, bottom: 0, left: 0 };
 
-  if (!W || !H) return null; // sem dimensões = não desenha
+  if (!W || !H) return null; 
 
   const pad = 8;
   const r = 14;
