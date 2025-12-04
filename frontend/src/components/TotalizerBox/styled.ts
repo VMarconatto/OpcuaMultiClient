@@ -1,32 +1,11 @@
-/**
-** =======================================================
-@SECTION  : UI — Wallet Box Styles
-@FILE     : src/components/WalletBox/styled.ts
-@PURPOSE  : Estilização do card WalletBox, incluindo gradiente dinâmico,
-            responsividade e efeito de hover com sombra suave.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
-/**
- * Props do container principal.
- * @property color Cor principal do gradiente.
- * @property unit  Unidade opcional (não utilizada diretamente nos estilos).
- */
 export interface IContainerProps {
   color: string;
   unit?: string;
 }
 
-/**
- * Container principal do WalletBox.
- * @remarks
- * - Usa gradiente definido pela prop `color` para o início do fundo.
- * - Aplica efeito de hover suave (elevação e sombra).
- * - Responsivo para telas menores que 750px e 414px.
- */
 export const Container = styled.div<IContainerProps>`
   width: 33.2%;
   height: 140px;
@@ -102,10 +81,6 @@ export const Container = styled.div<IContainerProps>`
   }
 `;
 
-/**
- * Rodapé do card — exibe informações complementares.
- * @remarks Inclui cor verde (#1dd75b) para valores positivos.
- */
 export const FooterInfo = styled.div`
   display: flex;
   justify-content: space-between;
