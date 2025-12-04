@@ -1,37 +1,21 @@
-/**
-** =======================================================
-@SECTION  : Layout — Aside Navigation (UI)
-@FILE     : src/components/Aside/styles.ts
-@PURPOSE  : Estilos do componente de navegação lateral: container com
-            vinheta/gradiente, grupos expansíveis, caret animado e submenu.
-            Mantém a identidade visual Itália — sem alterar regras.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from "styled-components";
 
-/** Cores base (paleta Itália). */
 const italianGreen = "#090808ff";
 const italianRed   = "#444445ff";
 const italianWhite = "rgba(255, 254, 254, 1)";
 const white2       = "#444445ff";
 
-/** Dimensões alinhadas ao MainHeader. */
+
 const HEADER_HEIGHT = 70;  // mesma altura do MainHeader
 const SEP_THICKNESS = 2;   // mesma espessura do MainHeader (px)
 
-/**
- * Propriedades do container principal do Aside.
- */
 interface ContainerProps {
   /** Atividade/visibilidade do Aside (reserva para lógica futura). */
   isActive: boolean;
 }
 
-/**
- * Container principal do Aside.
- */
+
 export const Container = styled.div<ContainerProps>`
   grid-area: AS;
   background:
@@ -48,7 +32,7 @@ export const Container = styled.div<ContainerProps>`
   position: relative;
   box-shadow: 0 8px 25px rgba(0,0,0,0.45);
 
-  /* HORIZONTAL — alinhada com MainHeader */
+
   &::after {
     content: "";
     position: absolute;
@@ -62,7 +46,7 @@ export const Container = styled.div<ContainerProps>`
     z-index: 2;
   }
 
-  /* VERTICAL — mesma espessura */
+
   &::before {
     content: "";
     position: absolute;
@@ -77,14 +61,14 @@ export const Container = styled.div<ContainerProps>`
   }
 `;
 
-/** Cabeçalho do Aside (logo e título). */
+
 export const Header = styled.header`
   height: 70px;
   display: flex;
   align-items: center;
 `;
 
-/** Título textual ao lado do logo (opcional em telas maiores). */
+
 export const Title = styled.h3`
   color: ${props => props.theme.textPrimary};
   margin-left: -60px;
@@ -96,7 +80,7 @@ export const Title = styled.h3`
   }
 `;
 
-/** Logo Sorgente. */
+
 export const LogImg = styled.img`
   height: 200px;
   width: 300px;
@@ -109,14 +93,14 @@ export const LogImg = styled.img`
   }
 `;
 
-/** Contêiner da lista de menus/grupos. */
+
 export const MenuContainer = styled.nav`
   display: flex;
   flex-direction: column;
   margin-top: 50px;
 `;
 
-/** Link de menu simples (fora dos submenus). */
+
 export const MenuItemLink = styled.a`
   color: ${props => props.theme.textPrimary};
   text-decoration: none;
@@ -135,7 +119,7 @@ export const MenuItemLink = styled.a`
   }
 `;
 
-/** Botão de menu (para ações/saídas, se necessário). */
+
 export const MenuItemButton = styled.button`
   font-size: 25px;
   color: ${props => props.theme.textPrimary};
@@ -157,9 +141,7 @@ export const MenuItemButton = styled.button`
   }
 `;
 
-/* ====== ESTILOS PARA O DROPDOWN DO DASHBOARD ====== */
 
-/** Grupo "Dashboard" (wrapper do toggle e submenu). */
 export const DashboardGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -167,7 +149,6 @@ export const DashboardGroup = styled.div`
   margin: 4px 0 10px 0;
 `;
 
-/** Botão que abre/fecha o submenu "Dashboard". */
 export const DashboardToggle = styled.button`
   display: flex;
   align-items: center;
@@ -181,7 +162,7 @@ export const DashboardToggle = styled.button`
   border: 0;
   border-radius: 12px;
 
-  /* “pílula” em vermelho Itália */
+
   background: linear-gradient(135deg, rgba(120,2,8,0.96), rgba(120,2,8,0.75));
   color: ${italianWhite};
   cursor: pointer;
@@ -199,10 +180,7 @@ export const DashboardToggle = styled.button`
   }
 `;
 
-/**
- * Ícone de seta (caret) para indicar expansão.
- * @param $open Indica se o grupo está expandido (rotação 180°).
- */
+
 export const Caret = styled.span<{ $open: boolean }>`
   display: inline-flex;
   align-items: center;
@@ -212,7 +190,7 @@ export const Caret = styled.span<{ $open: boolean }>`
   > svg { font-size: 22px; }
 `;
 
-/** Submenu (lista vertical de links com guia lateral). */
+
 export const SubMenu = styled.div`
   position: relative;
   display: flex;
@@ -221,7 +199,7 @@ export const SubMenu = styled.div`
   padding-left: 16px;
   margin-left: 12px;
 
-  /* linha vertical de referência (vermelho Itália) */
+
   &::before {
     content: "";
     position: absolute;
@@ -234,10 +212,7 @@ export const SubMenu = styled.div`
   }
 `;
 
-/**
- * Item do submenu (link). Usa prop `$active` só no CSS (não vai ao DOM).
- * @param $active Destaca visualmente o item ativo.
- */
+
 export const SubMenuItem = styled.a<{ $active?: boolean }>`
   position: relative;
   text-decoration: none;
@@ -274,16 +249,9 @@ export const SubMenuItem = styled.a<{ $active?: boolean }>`
   `}
 `;
 
-/* ====== NOVOS ESTILOS PARA O GRUPO "CREATE APPLICATION" ====== */
-/** Wrapper do grupo "Create Application" (herda de DashboardGroup). */
 export const CreateGroup = styled(DashboardGroup)``;
-/** Botão do grupo "Create" (herda de DashboardToggle). */
 export const CreateToggle = styled(DashboardToggle)``;
 
-/**
- * Link “filho” dentro do SubMenu (variação de MenuItemLink).
- * Mantém recuo/padding alinhados com a guia vertical do submenu.
- */
 export const SubMenuLink = styled(MenuItemLink)`
   margin-left: 6px;      /* mesmo afastamento usado em SubMenuItem */
   padding: 8px 8px 8px 12px;
