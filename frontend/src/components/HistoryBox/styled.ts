@@ -1,12 +1,3 @@
-/**
-** =======================================================
-@SECTION  : UI — HistoryBox (Styles)
-@FILE     : src/components/HistoryBox/styled.ts
-@PURPOSE  : Estilos de layout/tema para o gráfico histórico, incluindo header,
-            legenda, rótulo de unidade e camadas para navegação.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
@@ -15,10 +6,6 @@ export interface ILegendProps {
   color?: string;
 }
 
-/**
- * Wrapper geral do HistoryBox, com gradiente e overlay translúcido.
- * @note O overlay usa `pointer-events: none` para não bloquear cliques.
- */
 export const Container = styled.div`
   width: 120%;
   height: 550px;
@@ -50,10 +37,6 @@ export const Container = styled.div`
   }
 `;
 
-/**
- * Container do gráfico, garantindo que as camadas do Recharts fiquem clicáveis.
- * @remarks Ajuste pensado para `Customized` (setas) e tooltips.
- */
 export const ChartContainer = styled.div`
   position: relative;
 
@@ -69,7 +52,6 @@ export const ChartContainer = styled.div`
  }
 `;
 
-/** Cabeçalho com unidade e legenda. */
 export const Header = styled.header`
   width: 100%;
   display: flex;
@@ -85,7 +67,6 @@ export const Header = styled.header`
   }
 `;
 
-/** Lista de séries (legenda) scrollável. */
 export const LegendContainer = styled.ul`
   list-style: none;
   display: flex;
@@ -107,10 +88,6 @@ export const LegendContainer = styled.ul`
   }
 `;
 
-/**
- * Item de legenda com indicador colorido e rótulo.
- * @param color - Cor do quadradinho indicador.
- */
 export const Legend = styled.li<ILegendProps>`
   display: flex;
   align-items: center;
@@ -140,7 +117,7 @@ export const Legend = styled.li<ILegendProps>`
   }
 `;
 
-/** Rótulo de unidade exibido acima do gráfico. */
+
 export const UnitLabel = styled.span`
   width: 100%;
   textAlign: right;
@@ -153,10 +130,6 @@ export const UnitLabel = styled.span`
   display: block;
 `;
 
-/**
- * Container das setas de navegação posicionadas sobre o gráfico.
- * @note `pointer-events: none` aqui e `auto` no botão garantem cliques nos botões.
- */
 export const NavArrows = styled.div`
   position: absolute;
   top: 12px;
@@ -167,7 +140,6 @@ export const NavArrows = styled.div`
   pointer-events: none; 
 `;
 
-/** Botão de seta (prev/next) com estado visual de desabilitado. */
 export const ArrowBtn = styled.button`
   pointer-events: auto;   /* o botão captura cliques */
   width: 32px;
