@@ -1,13 +1,3 @@
-/**
-** =======================================================
-@SECTION  : OPC UA — Client List & Status Board
-@FILE     : src/pages/OpcuaClientList/index.tsx
-@PURPOSE  : Listar todos os clients OPC UA configurados, exibir o status
-            de comunicação (ativo/inativo/checando) e permitir a seleção de
-            um client para edição/ativação no formulário ao lado
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
@@ -61,7 +51,7 @@ const AnimatedCard = motion(ConnectionCard);
  * - Badges de status com rótulos textuais (“Checando…/Ativo/Inativo”).
  */
 const OpcuaClientList: React.FC = () => {
-  /** Lista de clients retornados pelo backend. */
+
   const [connections, setConnections] = useState<Connection[]>([]);
   /**
    * Mapa `clientId -> status`:
@@ -71,11 +61,7 @@ const OpcuaClientList: React.FC = () => {
   /** Client atualmente selecionado no contexto global. */
   const { deviceId, setDeviceId } = useDevice();
 
-  /**
-   * Normaliza diferentes formatos de retorno de status do backend
-   * para um booleano simples (`true` = ativo/conectado).
-   * @param data Resposta bruta do backend (pode variar por versão)
-   */
+
   const normalizeConnected = (data: any): boolean => {
     if (!data) return false;
     if (typeof data.connected === "boolean") return data.connected;
