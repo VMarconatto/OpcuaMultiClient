@@ -82,7 +82,7 @@ frontend/
 Backend:
 Node.js / TypeScript	Core da aplicação OPC UA
 node-opcua	Implementação do cliente OPC UA
-Express.js	API REST entre backend ↔ frontend
+Express.js	API REST entre BackEnd ↔ FrontEnd
 MongoDB / Mongoose	Armazenamento dos dados de telemetria
 Nodemailer / WhatsApp API	Alertas automáticos
 Winston / Morgan	Logging e auditoria
