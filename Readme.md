@@ -4,6 +4,8 @@
 **Frontend: React + TypeScript + Styled Components**
 
 ---
+## Observação
+Optei por comentar todo o programa com JSDOC em Português. Para acesso ao repositório completo, consulte as condições descritas na licença.
 
 ## 📘 Visão Geral
 
@@ -76,19 +78,17 @@ frontend/
 └── public/
     └── favicon.ico
 ```
-🧠 Tecnologias Principais
-Backend
-Tecnologia	Uso
+🧠 Tecnologias Principais:
+Backend:
 Node.js / TypeScript	Core da aplicação OPC UA
 node-opcua	Implementação do cliente OPC UA
-Express.js	API REST entre backend ↔ frontend
+Express.js	API REST entre BackEnd ↔ FrontEnd
 MongoDB / Mongoose	Armazenamento dos dados de telemetria
 Nodemailer / WhatsApp API	Alertas automáticos
 Winston / Morgan	Logging e auditoria
 dotenv	Configuração por ambiente
 
-Frontend
-Tecnologia	Uso
+Frontend:
 React + TypeScript	Framework principal da UI
 styled-components	CSS-in-JS e temas dinâmicos
 Framer Motion	Animações de interface
