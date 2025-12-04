@@ -1,27 +1,10 @@
-/**
-** =======================================================
-@SECTION  : UI — Pie Chart Balance Styles
-@FILE     : src/components/PieChartBalance/styled.ts
-@PURPOSE  : Estilização do card do donut (container, legenda e áreas laterais),
-            incluindo responsividade e rolagem suave da lista de legendas.
-@LAST_EDIT : 2025-11-11
-** =======================================================
-*/
 
 import styled from 'styled-components';
 
-/**
- * Props da legenda do donut.
- * @property color Cor de fundo do bloco numérico (percentual).
- */
 export interface ILegendProps {
   color: string;
 }
 
-/**
- * Container do card do PieChartBalance.
- * @remarks Fundo em gradiente sutil; bordas arredondadas e layout flex.
- */
 export const Container = styled.div`
   width: 49.8%;
   height: 420px;
@@ -30,7 +13,6 @@ export const Container = styled.div`
   padding: 20px;
   bottom:-0px;
 
-  /* Gradiente principal do card */
   background: 
         linear-gradient(135deg, #373737ff 0%, #121212 100%),
         rgba(0, 0, 0, 0.3);
@@ -49,7 +31,6 @@ export const Container = styled.div`
   }
 `;
 
-/** Coluna esquerda contendo título e lista de legendas. */
 export const SideLeft = styled.aside`
   padding: 20px 16px;
   display: flex;
@@ -79,10 +60,6 @@ export const SideLeft = styled.aside`
   }
 `;
 
-/**
- * Lista de legendas com rolagem sutil.
- * @note A rolagem é fina e estilizada para manter leitura confortável.
- */
 export const LegendContainer = styled.ul`
   list-style: none;  
   max-height: 300px;
@@ -100,10 +77,6 @@ export const LegendContainer = styled.ul`
   }
 `;
 
-/**
- * Item de legenda — bloco colorido com percentual + rótulo.
- * @property color Define a cor do bloco numérico (percentual).
- */
 export const Legend = styled.li<ILegendProps>`
   display: flex;
   align-items: center;
@@ -131,7 +104,6 @@ export const Legend = styled.li<ILegendProps>`
   }
 `;
 
-/** Área direita — aloja o `<ResponsiveContainer>` do Recharts. */
 export const SideRight = styled.main`
   display: flex;
   flex: 1;
