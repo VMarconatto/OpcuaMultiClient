@@ -1,3 +1,13 @@
+/**
+** =======================================================
+@SECTION  : App Metrics — Infra & Telemetry Overview
+@FILE     : src/pages/AppMetrics/AppMetrics.tsx
+@PURPOSE  : Painel de métricas de infraestrutura: MongoDB, Cluster, OPC UA,
+            Host e HTTP (Morgan). Busca dados no backend multi-client e
+            agrega/normaliza números para os cards.
+@LAST_EDIT : 2025-11-11
+** =======================================================
+*/
 
 import React, { useMemo, useState, useEffect } from "react";
 import axios from "axios";
