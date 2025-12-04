@@ -7,8 +7,8 @@ const italianWhite = "rgba(255, 254, 254, 1)";
 const white2       = "#444445ff";
 
 
-const HEADER_HEIGHT = 70;  // mesma altura do MainHeader
-const SEP_THICKNESS = 2;   // mesma espessura do MainHeader (px)
+const HEADER_HEIGHT = 70;  
+const SEP_THICKNESS = 2;  
 
 interface ContainerProps {
   /** Atividade/visibilidade do Aside (reserva para lógica futura). */
