@@ -5,7 +5,7 @@
 
 ---
 ## Observação
-Optei por comentar todo o programa com JSDOC em Português. Para acesso ao repositório completo, consulte as condições descritas na licença.
+Optei por comentar todo o programa com JSDOC em Português. Este repositório tem acesso apenas aos componentes de páginas do React, para acesso completo ao diretório do BackEnd e o restante dos componentes React, consulte as condições descritas na licença.
 
 ## 📘 Visão Geral
 
