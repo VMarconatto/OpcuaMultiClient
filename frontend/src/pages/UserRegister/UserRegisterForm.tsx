@@ -210,7 +210,6 @@ const UserRegisterForm: React.FC = () => {
           body: JSON.stringify(submitIntent),
         });
 
-        // Tenta decodificar JSON; em caso de falha, volta objeto vazio
         const data = await res.json().catch(() => ({}));
 
         if (cancelled) return;
@@ -282,9 +281,9 @@ const UserRegisterForm: React.FC = () => {
   return (
     <Form onSubmit={handleSubmit} noValidate>
       <Header>
-        <Title>Cadastro de Usuário</Title>
+        <Title>User Registration</Title>
         <Subtitle>
-          Preencha os dados abaixo para criar um novo usuário.
+          Fill in the information below to create a new user.
         </Subtitle>
       </Header>
 
