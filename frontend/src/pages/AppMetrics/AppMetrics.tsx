@@ -3,8 +3,7 @@
 @SECTION  : App Metrics — Infra & Telemetry Overview
 @FILE     : src/pages/AppMetrics/AppMetrics.tsx
 @PURPOSE  : Painel de métricas de infraestrutura: MongoDB, Cluster, OPC UA,
-            Host e HTTP (Morgan). Busca dados no backend multi-client e
-            agrega/normaliza números para os cards — sem alterar lógica.
+            Host e HTTP (Morgan). Busca dados no backend multi-client.
 @LAST_EDIT : 2025-12-05
 ** =======================================================
 */
@@ -35,7 +34,7 @@ type SessionState = "active" | "reconnecting" | "closed";
 
 /**
  * Estrutura de status do OPC UA retornada pelo backend.
- * - Os campos opcionais permitem compatibilidade com diferentes versões.
+ *
  */
 type OpcuaStatus = {
   connected: boolean;
@@ -176,7 +175,6 @@ const AppMetrics: React.FC = () => {
   const mongoChartData = useMemo(() => {
     if (!mongoStatus || !mongoStatus.opcional) return [];
 
-    // Normaliza opcounters: sempre números
     const rawOps = mongoStatus.opcional.opcounters ?? {};
     const opcounters = {
       insert: rawOps.insert ?? 0,
@@ -271,7 +269,6 @@ const AppMetrics: React.FC = () => {
       } catch (err) {
         console.error("Erro ao buscar MongoDB /mongodb/status:", err);
         if (!cancelled) {
-          // Marca como desconectado, mas mantém estrutura se já existia
           setMongoStatus((prev) =>
             prev && prev.opcional
               ? { ...prev, connected: false }
