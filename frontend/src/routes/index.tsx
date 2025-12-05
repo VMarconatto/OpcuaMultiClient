@@ -8,7 +8,7 @@
 ** =======================================================
 */
 
-// RouterConfig — index.tsx (ajustado)
+// RouterConfig — index.tsx
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import styled from "styled-components";
