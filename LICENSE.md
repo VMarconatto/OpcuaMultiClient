@@ -46,7 +46,7 @@ Nenhum direito é concedido ou transferido ao usuário além do acesso para visu
 
 ## 🔐 Acesso ao repositório privado (código completo)
 
-Este repositório é uma **landing de apresentação**. O **código-fonte completo** está disponível **sob solicitação** para avaliação profissional (entrevistas, due diligence, POCs).
+Este repositório é uma **landing de apresentação**. O **código-fonte completo** está disponível **sob solicitação** para avaliação profissional (entrevistas, POCs, Parcerias & Contratos).
 
 - ✅ **Perfil típico**: recrutadores, gestores técnicos, parceiros, clientes com NDA.
 - 🔒 **Condições**: uso exclusivo para avaliação; **não é permitido** copiar, redistribuir ou criar derivados sem autorização por escrito.
