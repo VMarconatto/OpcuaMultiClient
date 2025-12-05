@@ -116,7 +116,6 @@ const AppMetrics: React.FC = () => {
   const { deviceId, setDeviceId } = useDevice();
 
   /**
-   * Converte ids iniciados por "device" para "Client" (compat. de rotas do backend).
    * @returns {string} Identificador normalizado (ex.: "Client01") ou string vazia.
    */
   const resolvedDeviceId = useMemo((): string => {
@@ -148,7 +147,7 @@ const AppMetrics: React.FC = () => {
     };
   } | null>(null);
 
-  /** Estado OPC UA (curto prazo) e telemetria (janelas de 60–300s). */
+  /** Estado OPC UA  */
   const [opcuaStatus, setOpcuaStatus] = useState<OpcuaStatus | null>(null);
   const [opcuaTelemetry, setOpcuaTelemetry] = useState<OpcuaTelemetry | null>(
     null
@@ -186,7 +185,6 @@ const AppMetrics: React.FC = () => {
       ? +(mongoStatus.uptime / 3600).toFixed(1)
       : 0;
 
-    // Apenas referência visual — ajuste ao seu teto esperado
     const EXPECTED_CAP_PER_MIN = 600;
     const updates = opcounters.update || 0;
     const totalOps = (opcounters.insert || 0) + updates;
@@ -260,7 +258,6 @@ const AppMetrics: React.FC = () => {
     const controller = new AbortController();
 
     /**
-     * Descobre um prefixo base que responda JSON em `/teste`.
      * @returns {Promise<string>} Prefixo base (ex.: "", "/api/data", "/data").
      */
     async function discoverBasePrefix(): Promise<string> {
@@ -285,7 +282,6 @@ const AppMetrics: React.FC = () => {
             return String(base).replace(/\/+$/, "");
           }
         } catch {
-          /* tenta próxima opção */
         }
       }
       throw new Error("Nenhum prefixo de API respondeu a /teste com JSON.");
@@ -425,7 +421,6 @@ const AppMetrics: React.FC = () => {
           icon={clusterIcon} // ou planMaxBytes={536870912}
         />
 
-        {/* OPCUABox pode fazer self-fetch; aqui já injetamos status/telemetria do pai */}
         <OPCUABox
           title="OPC UA (collector)"
           deviceId={resolvedDeviceId}
