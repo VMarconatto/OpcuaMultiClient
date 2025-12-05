@@ -4,8 +4,8 @@
 @FILE     : src/pages/AppMetrics/AppMetrics.tsx
 @PURPOSE  : Painel de métricas de infraestrutura: MongoDB, Cluster, OPC UA,
             Host e HTTP (Morgan). Busca dados no backend multi-client e
-            agrega/normaliza números para os cards.
-@LAST_EDIT : 2025-11-11
+            agrega/normaliza números para os cards — sem alterar lógica.
+@LAST_EDIT : 2025-12-05
 ** =======================================================
 */
 
@@ -33,6 +33,10 @@ import MorganMetricsBox from "../../components/MorganMetrics/MorganMetricsBox";
 /** Estado da sessão OPC UA. */
 type SessionState = "active" | "reconnecting" | "closed";
 
+/**
+ * Estrutura de status do OPC UA retornada pelo backend.
+ * - Os campos opcionais permitem compatibilidade com diferentes versões.
+ */
 type OpcuaStatus = {
   connected: boolean;
   endpointUrl: string;
@@ -135,14 +139,14 @@ const AppMetrics: React.FC = () => {
     uptime?: number;
     opcional?: {
       clientConnections?: number;
-      opcounters: {
-        insert: number;
-        query: number;
-        update: number;
-        delete: number;
+      opcounters?: {
+        insert?: number;
+        query?: number;
+        update?: number;
+        delete?: number;
       };
-      connections: { current: number; available: number };
-      mem: { resident: number; virtual: number };
+      connections?: { current?: number; available?: number };
+      mem?: { resident?: number; virtual?: number };
       insertsPerMin?: number;
       insertsSeries?: number[];
     };
@@ -167,12 +171,22 @@ const AppMetrics: React.FC = () => {
    * Deriva dados para o card do MongoDB.
    * - Usa `normalizeMetricPercent` para gerar percentuais visuais.
    *
-   * @returns {Array<{name:string, amount:number, percent:number, color:string}>}
+   * @returns {Array<{key:string, name:string, amount:number, percent:number, color:string}>}
    *          Série agregada para `MongoDBBox`.
    */
   const mongoChartData = useMemo(() => {
     if (!mongoStatus || !mongoStatus.opcional) return [];
-    const { opcounters, insertsPerMin } = mongoStatus.opcional;
+
+    // Normaliza opcounters: sempre números
+    const rawOps = mongoStatus.opcional.opcounters ?? {};
+    const opcounters = {
+      insert: rawOps.insert ?? 0,
+      query: rawOps.query ?? 0,
+      update: rawOps.update ?? 0,
+      delete: rawOps.delete ?? 0,
+    };
+
+    const insertsPerMin = mongoStatus.opcional.insertsPerMin ?? 0;
 
     const clientConns =
       typeof mongoStatus.opcional.clientConnections === "number"
@@ -181,45 +195,49 @@ const AppMetrics: React.FC = () => {
         ? 1
         : 0;
 
-    const latencyMs = mongoStatus.latencyMs || 0;
+    const latencyMs = mongoStatus.latencyMs ?? 0;
     const uptimeH = mongoStatus.uptime
       ? +(mongoStatus.uptime / 3600).toFixed(1)
       : 0;
 
-    // Apenas referência visual — ajuste ao seu teto esperado
     const EXPECTED_CAP_PER_MIN = 600;
-    const updates = opcounters.update || 0;
-    const totalOps = (opcounters.insert || 0) + updates;
+    const updates = opcounters.update;
+    const totalOps = opcounters.insert + updates;
 
     return [
       {
-        name: "Conexões Ativas",
+        key: "connections" as const,
+        name: "Active Connections",
         amount: clientConns,
         percent: normalizeMetricPercent(clientConns, 10),
         color: "#1890ff",
       },
       {
-        name: "Latência (ms)",
+        key: "latency" as const,
+        name: "Latency (ms)",
         amount: latencyMs,
         percent: normalizeMetricPercent(latencyMs, 1000),
         color: "#ffc53d",
       },
       {
+        key: "uptime" as const,
         name: "Uptime (h)",
         amount: uptimeH,
-        percent: normalizeMetricPercent(Number(mongoStatus.uptime), 604800),
+        percent: normalizeMetricPercent(
+          Number(mongoStatus.uptime ?? 0),
+          604800
+        ),
         color: "#73d13d",
       },
       {
+        key: "inserts" as const,
         name: "Inserts/min",
-        amount: Math.max(0, Math.round(insertsPerMin ?? 0)),
-        percent: normalizeMetricPercent(
-          insertsPerMin ?? 0,
-          EXPECTED_CAP_PER_MIN
-        ),
+        amount: Math.max(0, Math.round(insertsPerMin)),
+        percent: normalizeMetricPercent(insertsPerMin, EXPECTED_CAP_PER_MIN),
         color: "#36cfc9",
       },
       {
+        key: "updates" as const,
         name: "Updates",
         amount: updates,
         percent: totalOps > 0 ? Math.round((updates / totalOps) * 100) : 0,
@@ -227,28 +245,69 @@ const AppMetrics: React.FC = () => {
       },
     ];
   }, [mongoStatus]);
-
   /**
-   * Dados auxiliares para status simples do MongoDB (badge rápido).
-   * @returns {Array<{name:string, amount:number, percent:number, color:string}>}
+   * Efeito: busca status do MongoDB para o client atual.
+   * - GET `/{ClientXX}/mongodb/status`
+   * - Atualiza `mongoStatus` e, por consequência, `mongoChartData`.
    */
-  const mongoStatusChartData = useMemo(() => {
-    if (!mongoStatus) return [];
-    return [
-      {
-        name: "Conectado",
-        amount: mongoStatus.connected ? 1 : 0,
-        percent: mongoStatus.connected ? 100 : 0,
-        color: mongoStatus.connected ? "#52c41a" : "#ff4d4f",
-      },
-      {
-        name: "Latência (ms)",
-        amount: mongoStatus.latencyMs || 0,
-        percent: 100,
-        color: "#1890ff",
-      },
-    ];
-  }, [mongoStatus]);
+  useEffect(() => {
+    if (!resolvedDeviceId) {
+      setMongoStatus(null);
+      return;
+    }
+
+    let timer: any;
+    let cancelled = false;
+
+    const fetchMongoStatus = async () => {
+      try {
+        const { data } = await axios.get(
+          `${API_BASE}/${resolvedDeviceId}/mongodb/status`,
+          { withCredentials: true }
+        );
+
+        if (!cancelled) {
+          setMongoStatus(data);
+        }
+      } catch (err) {
+        console.error("Erro ao buscar MongoDB /mongodb/status:", err);
+        if (!cancelled) {
+          // Marca como desconectado, mas mantém estrutura se já existia
+          setMongoStatus((prev) =>
+            prev && prev.opcional
+              ? { ...prev, connected: false }
+              : {
+                  connected: false,
+                  latencyMs: null,
+                  opcional: {
+                    clientConnections: 0,
+                    opcounters: {
+                      insert: 0,
+                      query: 0,
+                      update: 0,
+                      delete: 0,
+                    },
+                    connections: { current: 0, available: 0 },
+                    mem: { resident: 0, virtual: 0 },
+                    insertsPerMin: 0,
+                    insertsSeries: [],
+                  },
+                }
+          );
+        }
+      } finally {
+        if (!cancelled) {
+          timer = setTimeout(fetchMongoStatus, 10_000); // repete a cada 10s
+        }
+      }
+    };
+
+    fetchMongoStatus();
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [resolvedDeviceId, API_BASE]);
 
   /**
    * Efeito: busca a lista de alertas enviados para o client atual.
