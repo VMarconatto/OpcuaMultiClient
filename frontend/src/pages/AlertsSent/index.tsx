@@ -64,8 +64,6 @@ const AlertsSent: React.FC = ()  => {
   const API_BASE = "http://localhost:3000";
 
   /**
-   * Converte ids iniciados com "device" para "Client".
-   * Ex.: "device01" → "Client01".
    *
    * @returns {string} Identificador normalizado do client ou string vazia quando não definido.
    */
@@ -124,7 +122,6 @@ const AlertsSent: React.FC = ()  => {
         if (!active) return;
         setAlerts(Array.isArray(data) ? data : []);
       } catch (e: any) {
-        // IGNORA aborts (StrictMode/unmount/troca de device)
         const msg = String(e?.message || "");
         if (e?.name === "AbortError" || msg.toLowerCase().includes("aborted")) {
           console.log("[AlertsSent] request aborted (cleanup/rerender)");
@@ -154,7 +151,6 @@ const AlertsSent: React.FC = ()  => {
    * @returns {JSX.Element}     Card com informações do alerta.
    */
   const renderCard = (alert: AlertEntry, idx: number) => {
-    // Nome do tag: primeiro campo que não seja metadado
     const tagName =
       Object.keys(alert.alertData).find((k) => !KNOWN_META.has(k)) ||
       "(sem tag)";
@@ -170,7 +166,6 @@ const AlertsSent: React.FC = ()  => {
         : String(value ?? "");
     const valueWithUnit = unit ? `${valueCore} ${unit}` : valueCore;
 
-    // Demais metadados úteis (se houver)
     const extraMeta = Object.entries(alert.alertData).filter(
       ([k]) => k !== tagName && !KNOWN_META.has(k)
     );
