@@ -4,9 +4,9 @@ Copyright (c) 2025 **Vinícius de Oliveira Marconatto**
 
 ---
 
-## 🇧🇷 Versão em Português
+## 🇧🇷 Versão Rev 0
 
-Este repositório é disponibilizado **exclusivamente para fins de demonstração técnica e avaliação profissional**.
+Este repositório é disponibilizado **exclusivamente para fins de demonstração técnica**.
 
 O objetivo é apresentar a arquitetura, a estrutura de código e as práticas de desenvolvimento utilizadas neste projeto, como parte do portfólio técnico do autor.
 
