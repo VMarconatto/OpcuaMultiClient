@@ -46,8 +46,7 @@ const PageHeaderBar = styled.div`
   align-items: center;
   gap: 12px;
 
-  /* Ajuste visual leve; use o background do seu layout/página, não do form */
-  /* background: rgba(10, 10, 10, 0.55); */
+
   backdrop-filter: blur(6px);
   padding: 10px 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -137,7 +136,6 @@ const RouterConfig: React.FC = () => {
             <Route path="alarms" element={<AlarmsList />} />
             <Route path="metrics" element={<AppMetrics />} />
             <Route path="alertssent" element={<AlertsSentPage />} />
-            {/* Aqui usamos o wrapper para posicionar o ClientPicker fora do Container do form */}
             <Route path="analogsetup" element={<AnalogSetupPage />} />
             <Route path="opcuasetup" element={<OpcuaClientForm />} />
             <Route path="opcuaclients" element={<OpcuaClientList />} />
