@@ -25,7 +25,6 @@ import {
   SubmitButton,
   ToggleButton,
   StatusDot,
-  // Modal (msgbox) reutilizado pelo Confirm e pelo Browser
   MsgboxOverlay,
   MsgboxCard,
   MsgboxTitle,
@@ -484,7 +483,7 @@ const OpcuaClientForm: React.FC = () => {
         aria-label="OPC UA configuration form"
       >
         <FormGrid>
-          {/* Campos principais */}
+
           <FormGroup>
             <Label htmlFor="applicationName">Application Name</Label>
             <Input
