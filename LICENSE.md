@@ -4,7 +4,6 @@ Copyright (c) 2025 **Vinícius de Oliveira Marconatto**
 
 ---
 
-## 🇧🇷 Versão Rev 0
 
 Este repositório é disponibilizado **exclusivamente para fins de demonstração técnica**.
 
