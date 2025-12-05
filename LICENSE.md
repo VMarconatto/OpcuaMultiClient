@@ -20,20 +20,6 @@ Para obter autorização formal de uso, parceria técnica ou fins acadêmicos, e
 
 ---
 
-## 🇺🇸 English Version
-
-This repository is provided **strictly for technical demonstration and professional evaluation purposes**.
-
-Its purpose is to showcase the system architecture, source code structure, and software engineering practices used in this project, as part of the author’s professional portfolio.
-
-**It is strictly prohibited to copy, reproduce, redistribute, modify, compile, or use this code — in whole or in part — for any commercial, academic, or personal purpose without the author’s explicit written consent.**
-
-Public access is granted for **viewing and educational purposes only**, allowing recruiters, reviewers, and peers to assess the technical quality and architectural design of the codebase.
-
-For formal authorization, technical collaboration, or academic use, please contact:
-
-📧 **viniciusmarconatto@hotmail.com**
-
 ---
 
 ## Direitos e Propriedade Intelectual
