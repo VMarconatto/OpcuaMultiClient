@@ -141,9 +141,6 @@ const OpcuaClientList: React.FC = () => {
 
     fetchConnectionsAndStatuses();
 
-    // Se desejar polling no futuro:
-    // const t = setInterval(fetchConnectionsAndStatuses, 8000);
-    // return () => clearInterval(t);
   }, []);
 
   /**
@@ -174,12 +171,10 @@ const OpcuaClientList: React.FC = () => {
         Select one of the clients below to activate it or set up a new client.
       </Subtitle>
 
-      {/* Formulário de configuração/controle do client selecionado */}
       <Wrapper>
         <OpcuaClientForm />
       </Wrapper>
 
-      {/* Grade de cards com todos os clients cadastrados */}
       <ConnectionList>
         {connections.map((conn) => {
           const selected = conn.id === deviceId;
@@ -208,7 +203,6 @@ const OpcuaClientList: React.FC = () => {
               title={conn.endpoint}
               type="button"
             >
-              {/* Ícone (muda de cor conforme status) */}
               <ConnectionIcon
                 as={PlugZap}
                 aria-hidden
@@ -216,10 +210,9 @@ const OpcuaClientList: React.FC = () => {
                 active={isActive}
               />
 
-              {/* Nome do client */}
+
               <ConnectionName>{conn.applicationName}</ConnectionName>
 
-              {/* Badge textual de status */}
               <StatusBadge active={isActive}>{statusLabel}</StatusBadge>
             </AnimatedCard>
           );
