@@ -56,7 +56,6 @@ const Dashboard: React.FC<
   const { deviceId, setDeviceId } = useDevice();
 
   /**
-   * Converte `deviceXX` → `ClientXX` para compatibilidade das rotas do backend.
    * @returns {string} Identificador normalizado do client (ex.: "Client01") ou string vazia.
    */
   const resolvedDeviceId = useMemo((): string => {
