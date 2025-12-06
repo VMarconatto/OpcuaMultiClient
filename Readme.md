@@ -14,7 +14,7 @@ O sistema permite a **criação dinâmica de múltiplas instâncias independente
 
 O **frontend React/TypeScript** atua como painel de monitoramento e análise, exibindo em tempo real as variáveis coletadas, o status das conexões, alertas de limite e dashboards históricos.
 
-- Frontend ⇄ Backend: HTTP/HTTPS (REST) e, quando necessário, WebSockets.  
+- Frontend ⇄ Backend: HTTP/HTTPS (REST).  
 - Backend ⇄ OPC UA: sessões/assinaturas mantidas pelos clientes OPC UA (node-opcua).  
 - Backend ⇄ MongoDB: escrita de telemetria e leitura para as rotas da API.
 
@@ -32,7 +32,7 @@ Client01_Transmiters, Client02_Transmiters, Client03_Transmiters
 
 Pipeline de agregação temporal e filtragem por mês/ano, hora inicial/final.
 
-Sistema de alertas (e-mail / WhatsApp) baseado em limites configurados nos arquivos ClientXX_setuptsconfig.json.
+Sistema de alertas (e-mail / WhatsApp) baseado em limites
 
 🖥️ Frontend (React + TypeScript)
 Interface de dashboards industriais com múltiplos componentes:
@@ -81,7 +81,7 @@ frontend/
 🧠 Tecnologias Principais:
 Backend:
 Node.js / TypeScript	Core da aplicação OPC UA
-node-opcua	Implementação do cliente OPC UA
+Implementação do cliente OPC UA
 Express.js	API REST entre BackEnd ↔ FrontEnd
 MongoDB / Mongoose	Armazenamento dos dados de telemetria
 Nodemailer / WhatsApp API	Alertas automáticos
