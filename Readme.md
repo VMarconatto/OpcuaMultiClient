@@ -9,7 +9,7 @@ Optei por comentar todo o programa com JSDOC em Português. Este repositório te
 
 ## 📘 Visão Geral
 
-Este projeto implementa um **coletor de dados OPC UA multi-cliente** com arquitetura **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
+Este projeto implementa um **coletor de dados OPC UA multi-cliente** com as tecnologias **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
 O sistema permite a **criação dinâmica de múltiplas instâncias independentes de clientes OPC UA**, cada uma comunicando-se com diferentes servidores OPC UA na rede, armazenando leituras e telemetrias em coleções isoladas no MongoDB.
 
 O **frontend React/TypeScript** atua como painel de monitoramento e análise, exibindo em tempo real as variáveis coletadas, o status das conexões, alertas de limite e dashboards históricos.
