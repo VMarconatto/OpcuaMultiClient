@@ -5,16 +5,17 @@
 
 ---
 ## Observação
-Optei por comentar todo o programa com JSDOC em Português. Este repositório tem acesso apenas aos componentes de páginas do React, para acesso completo ao diretório do BackEnd e o restante dos componentes, consulte as condições descritas na licença.
+Optei por comentar todo o programa com JSDOC em Português. Este repositório tem acesso apenas aos componentes de páginas do React, para acesso completo ao diretório do BackEnd e o restante dos componentes, consulte as condições descritas na licença. Este respositório está em constante evolução, com o objetivo de melhorias em layout e propriedades gráficas. Novas adaptações e ampliação do backend como inclusão de modelos industriais padronizados, e versão servidor estão sendo desenvolvidas, bem como a refatoração constante do código
+caso necessário.
 
 ## 📘 Visão Geral
 
-Este projeto implementa um **coletor de dados OPC UA multi-cliente** com arquitetura **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
+Este projeto implementa um **coletor de dados OPC UA multi-cliente** com as tecnologias **Node.js + TypeScript + MongoDB + React**, projetado para ambientes industriais.  
 O sistema permite a **criação dinâmica de múltiplas instâncias independentes de clientes OPC UA**, cada uma comunicando-se com diferentes servidores OPC UA na rede, armazenando leituras e telemetrias em coleções isoladas no MongoDB.
 
 O **frontend React/TypeScript** atua como painel de monitoramento e análise, exibindo em tempo real as variáveis coletadas, o status das conexões, alertas de limite e dashboards históricos.
 
-- Frontend ⇄ Backend: HTTP/HTTPS (REST) e, quando necessário, WebSockets.  
+- Frontend ⇄ Backend: HTTP/HTTPS (REST).  
 - Backend ⇄ OPC UA: sessões/assinaturas mantidas pelos clientes OPC UA (node-opcua).  
 - Backend ⇄ MongoDB: escrita de telemetria e leitura para as rotas da API.
 
@@ -32,7 +33,7 @@ Client01_Transmiters, Client02_Transmiters, Client03_Transmiters
 
 Pipeline de agregação temporal e filtragem por mês/ano, hora inicial/final.
 
-Sistema de alertas (e-mail / WhatsApp) baseado em limites configurados nos arquivos ClientXX_setuptsconfig.json.
+Sistema de alertas (e-mail / WhatsApp) baseado em limites
 
 🖥️ Frontend (React + TypeScript)
 Interface de dashboards industriais com múltiplos componentes:
@@ -81,7 +82,7 @@ frontend/
 🧠 Tecnologias Principais:
 Backend:
 Node.js / TypeScript	Core da aplicação OPC UA
-node-opcua	Implementação do cliente OPC UA
+Implementação do cliente OPC UA
 Express.js	API REST entre BackEnd ↔ FrontEnd
 MongoDB / Mongoose	Armazenamento dos dados de telemetria
 Nodemailer / WhatsApp API	Alertas automáticos
