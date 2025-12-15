@@ -5,7 +5,7 @@
 
 ---
 ## Observação
-Optei por comentar todo o programa com JSDOC em Português. Este repositório tem acesso apenas aos componentes de páginas do React, para acesso completo ao diretório do BackEnd e o restante dos componentes, consulte as condições descritas na licença. Este respositório está em constante evolução, com o objetivo de melhorias em layout e propriedades gráficas. Novas adaptações e ampliação do backend como inclusão de modelos industriais padronizados, e versão servidor estão sendo desenvolvidas, bem como a refatoração constante do código.
+Optei por comentar todo o programa com JSDOC em Português. Este repositório tem acesso apenas aos componentes de páginas do React, para acesso completo ao diretório do BackEnd e o restante dos componentes, consulte as condições descritas na licença. Este respositório está em constante evolução, com o objetivo de melhorias em layout e propriedades gráficas. Novas adaptações e ampliação do backend como inclusão de modelos industriais padronizados, e versão servidor estão sendo desenvolvidas, bem como a refatoração do código.
 
 ## 📘 Visão Geral
 
