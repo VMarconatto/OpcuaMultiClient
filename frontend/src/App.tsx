@@ -28,7 +28,7 @@
 import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
 import { ThemeProvider } from "styled-components";
-import { ISelectInputProps } from "./components/Olds/SelectInput/index";
+import { ISelectInputProps } from "./components/SelectInput/index";
 import { IContentHeaderProps } from "./components/ContentHeader/index";
 import { IThemeProps } from "../../frontend/src/hooks/theme";
 import List from "./pages/Listas/index";
